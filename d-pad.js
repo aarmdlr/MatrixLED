@@ -97,26 +97,3 @@
         httpRequest.send();
     }
 })();
-
-
-
-
-
-
-
-
-  // Listen for orientation changes
-  window.addEventListener("orientationchange", function() {
-  	// Announce the new orientation number
-    if(window.innerHeight < window.innerWidth){
-      //alert("Please use Landscape!");
-      Swal.fire({
-        title: 'Rotate the device',
-        text: 'Please use the device in landscape',
-        imageUrl: 'https://aarmdlr.github.io/MatrixLED/rotateDevices.png',
-        imageWidth: 200,
-        imageHeight: 210,
-        imageAlt: 'Custom image',
-      })
-    }
-  }, false);
