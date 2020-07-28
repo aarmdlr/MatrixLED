@@ -97,3 +97,19 @@
         httpRequest.send();
     }
 })();
+
+// Listen for orientation changes
+//window.addEventListener("orientationchange", function() {
+	// Announce the new orientation number
+	//alert(screen.orientation);
+//}, false);
+
+(function () {
+
+  // Listen for orientation changes
+  window.addEventListener("orientationchange", function() {
+  	// Announce the new orientation number
+  	alert(screen.orientation);
+  }, false);
+
+  })();
