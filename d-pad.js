@@ -114,7 +114,7 @@
   // Listen for orientation changes
   window.addEventListener("orientationchange", function() {
   	// Announce the new orientation number
-    if(window.innerHeight > window.innerWidth){
+    if(window.innerHeight < window.innerWidth){
       alert("Please use Landscape!");
     }
   }, false);
