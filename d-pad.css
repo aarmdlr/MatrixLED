@@ -555,6 +555,8 @@
   font-size: 22px;
   text-align: center;
   transition: 0.3s;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btns{
@@ -623,6 +625,8 @@ height: 260px;
   transition: 0.3s;
   line-height: 8px;
   margin-left: 20px;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btnStart{
@@ -643,9 +647,4 @@ top: 170px;
   color: black;
   background-color: #aaaaaa;
   color: #dddddd;
-}
-
-.a {
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
-    -webkit-tap-highlight-color: transparent;
 }
