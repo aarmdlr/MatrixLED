@@ -644,3 +644,11 @@ top: 170px;
   background-color: #aaaaaa;
   color: #dddddd;
 }
+
+.a:active,
+.a:focus,
+.a:focus:active {
+  background-image: none;
+  outline: 0;
+  box-shadow: none;
+}
