@@ -98,11 +98,16 @@
     }
 })();
 
-// Listen for orientation changes
-//window.addEventListener("orientationchange", function() {
-	// Announce the new orientation number
-	//alert(screen.orientation);
-//}, false);
+
+(function () {
+
+  if(window.innerHeight < window.innerWidth){
+    alert("Please use Landscape!");
+  }
+
+})();
+
+
 
 (function () {
 
