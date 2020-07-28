@@ -103,7 +103,7 @@
 
 
 
-(function () {
+
 
   // Listen for orientation changes
   window.addEventListener("orientationchange", function() {
@@ -120,5 +120,3 @@
       })
     }
   }, false);
-
-})();
