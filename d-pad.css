@@ -566,12 +566,11 @@ height: 260px;
 
 }
 
-.btns a:hover{
-  opacity: 0.6;
-}
+
 
 .btns a:active{
   color: black;
+  opacity: 0.6;
 }
 
 .gamepad{
@@ -640,11 +639,8 @@ top: 170px;
   top: 210px;
 }
 
-.btns2 a:hover{
-  background-color: #aaaaaa;
-  color: #dddddd;
-}
-
 .btns2 a:active{
   color: black;
+  background-color: #aaaaaa;
+  color: #dddddd;
 }
