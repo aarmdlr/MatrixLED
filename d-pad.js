@@ -3,7 +3,7 @@
     function makeRequest() {
       navigator.vibrate(100);
         var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-        httpRequest.open('GET', 'http://192.168.1.207/up'); // service call
+        httpRequest.open('GET', 'http://matrixled.lan/up'); // service call
         httpRequest.send();
     }
 })();
@@ -13,7 +13,7 @@
     function makeRequest() {
       navigator.vibrate(100);
         var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-        httpRequest.open('GET', 'http://192.168.1.207/down'); // service call
+        httpRequest.open('GET', 'http://matrixled.lan/down'); // service call
         httpRequest.send();
     }
 })();
@@ -23,7 +23,7 @@
     function makeRequest() {
       navigator.vibrate(100);
         var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-        httpRequest.open('GET', 'http://192.168.1.207/left'); // service call
+        httpRequest.open('GET', 'http://matrixled.lan/left'); // service call
         httpRequest.send();
     }
 })();
@@ -33,7 +33,7 @@
     function makeRequest() {
       navigator.vibrate(100);
         var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-        httpRequest.open('GET', 'http://192.168.1.207/right'); // service call
+        httpRequest.open('GET', 'http://matrixled.lan/right'); // service call
         httpRequest.send();
     }
 })();
@@ -43,7 +43,7 @@
     function makeRequest() {
       navigator.vibrate(100);
         var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-        httpRequest.open('GET', 'http://192.168.1.207/btna'); // service call
+        httpRequest.open('GET', 'http://matrixled.lan/btna'); // service call
         httpRequest.send();
     }
 })();
@@ -53,7 +53,7 @@
     function makeRequest() {
       navigator.vibrate(100);
         var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-        httpRequest.open('GET', 'http://192.168.1.207/btnb'); // service call
+        httpRequest.open('GET', 'http://matrixled.lan/btnb'); // service call
         httpRequest.send();
     }
 })();
@@ -63,7 +63,7 @@
     function makeRequest() {
       navigator.vibrate(100);
         var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-        httpRequest.open('GET', 'http://192.168.1.207/btnx'); // service call
+        httpRequest.open('GET', 'http://matrixled.lan/btnx'); // service call
         httpRequest.send();
     }
 })();
@@ -73,7 +73,7 @@
     function makeRequest() {
       navigator.vibrate(100);
         var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-        httpRequest.open('GET', 'http://192.168.1.207/btny'); // service call
+        httpRequest.open('GET', 'http://matrixled.lan/btny'); // service call
         httpRequest.send();
     }
 })();
@@ -83,7 +83,7 @@
     function makeRequest() {
       navigator.vibrate(100);
         var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-        httpRequest.open('GET', 'http://192.168.1.207/start'); // service call
+        httpRequest.open('GET', 'http://matrixled.lan/start'); // service call
         httpRequest.send();
     }
 })();
@@ -93,7 +93,7 @@
     function makeRequest() {
         navigator.vibrate(100);
         var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-        httpRequest.open('GET', 'http://192.168.1.207/select'); // service call
+        httpRequest.open('GET', 'http://matrixled.lan/select'); // service call
         httpRequest.send();
     }
 })();
