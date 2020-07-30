@@ -648,3 +648,14 @@ top: 170px;
   background-color: #aaaaaa;
   color: #dddddd;
 }
+
+.btnHome{
+  background-color: #4e73df;
+  color: white;
+  text-decoration: none;
+  padding: 12px 11px;
+  border-radius: 15px;
+  top: 7px;
+  font-size: 2rem;
+  position: absolute;
+}
