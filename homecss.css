@@ -1,2 +1,2 @@
 @media (min-width: 768px){.sidebar {width: 14rem!important;} ul#accordionSidebar{display: block !important;} } @media(max-width: 768px){input[type='number'].form-control {width: 95px;}table.table {display: block !important;overflow-x: auto;}}table.table {display: inline-table;}
-@media(max-width: 395px){.btn-group.pb-6.col-12.text-xs > a {font-size: 8px !important;}#menuMove {font-size: 8px !important;}div#infoMotorBlind {font-size: 12px;}table.table {font-size: 14px;}}select.form-control {width: 85px;}
+@media(max-width: 395px){.btn-group.pb-6.col-12.text-xs > a {font-size: 8px !important;}#menuMove {font-size: 8px !important;}div#infoMotorBlind {font-size: 12px;}table.table {font-size: 14px;}}input.form-control, select.form-control {min-width: 159px;}
