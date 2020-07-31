@@ -54,22 +54,27 @@ function loadUTCCodes() {
 
 function setSelectedOptCountry() {
 
-  var optCountryVal = document.getElementById("input_COUNTRY_CODE").value;
+  setTimeout(
+    function() {
+      var optCountryVal = document.getElementById("input_COUNTRY_CODE").value;
 
-  var x = document.getElementById("select_COUNTRY_CODE");
-  var i;
-  var tempIndex=0;
+      var x = document.getElementById("select_COUNTRY_CODE");
+      var i;
+      var tempIndex=0;
 
-  for (i = 0; i < x.length; i++) {
-    if(x.options[i].value==optCountryVal){
-      tempIndex=x.options[i].index;
-    }
-  }
+      for (i = 0; i < x.length; i++) {
+        if(x.options[i].value==optCountryVal){
+          tempIndex=x.options[i].index;
+        }
+      }
 
-  //document.getElementById("select_COUNTRY_CODE").value = optCountryVal;
-  alert(tempIndex);
-  x.selectedIndex=tempIndex;
-  alert(optCountryVal);
+      //document.getElementById("select_COUNTRY_CODE").value = optCountryVal;
+      alert(tempIndex);
+      x.selectedIndex=tempIndex;
+      alert(optCountryVal);
+    }, 2000);
+
+
 
 }
 
