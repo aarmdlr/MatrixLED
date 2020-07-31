@@ -104,8 +104,8 @@ window.onload = function() {
           for (var i = 0; i < arrayFiles.length; i++) {
             if(arrayFiles[i].includes(".jpg")==true){
               tempArrayFile=arrayFiles[i];
-              tempArrayFile.replace("[", "");
-              tempArrayFile.replace("]", "");
+              tempArrayFile=tempArrayFile.replace("[", "");
+              tempArrayFile=tempArrayFile.replace("]", "");
               alert(tempArrayFile);
 
               strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><button onclick='setImageAsync("+tempArrayFile+")' class='btn btn-primary btnSetImage' >Set Image</button></td></tr>";
