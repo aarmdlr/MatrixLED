@@ -105,12 +105,13 @@ window.onload = function() {
             alert(arrayFiles[i]);
             strHTML=strHTML+"<tr><td>"+arrayFiles[i]+"</td><td><button onclick='setImageAsync("+arrayFiles[i]+")' class='btn btn-primary btnSetImage' >Set Image</button></td></tr>";
           }
+          document.getElementById("tableImages").innerHTML = strHTML;
         }
       };
       xhttp.open("GET", "http://matrixled.lan/list", true);
       xhttp.send();
 
-      document.getElementById("tableImages").innerHTML = this.responseText;
+
 
     }
 })();
