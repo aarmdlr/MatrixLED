@@ -57,30 +57,19 @@ function setSelectedOptCountry() {
   setTimeout(
     function() {
       var optCountryVal = document.getElementById("input_COUNTRY_CODE").value;
-
-      /*var x = document.getElementById("select_COUNTRY_CODE");
-      var i;
-      var tempIndex=0;
-
-      for (i = 0; i < x.length; i++) {
-        if(x.options[i].value==optCountryVal){
-          tempIndex=x.options[i].index;
-        }
-      }*/
-
       document.getElementById("select_COUNTRY_CODE").value = optCountryVal;
-      /*alert(tempIndex);
-      x.selectedIndex=tempIndex;
-      alert(optCountryVal);*/
-    }, 1000);
+    }, 500);
 
 
 
 }
 
 function setSelectedOptUTC() {
-  var optUTCVal = document.getElementById("input_UTC_CODE").value;
-  document.getElementById("select_UTC_CODE").value = optUTCVal;
+  setTimeout(
+    function() {
+      var optUTCVal = document.getElementById("input_UTC_CODE").value;
+      document.getElementById("select_UTC_CODE").value = optUTCVal;
+    }, 500);
 }
 
 
