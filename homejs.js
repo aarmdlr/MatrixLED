@@ -58,7 +58,7 @@ function setSelectedOptCountry() {
     function() {
       var optCountryVal = document.getElementById("input_COUNTRY_CODE").value;
 
-      var x = document.getElementById("select_COUNTRY_CODE");
+      /*var x = document.getElementById("select_COUNTRY_CODE");
       var i;
       var tempIndex=0;
 
@@ -66,13 +66,13 @@ function setSelectedOptCountry() {
         if(x.options[i].value==optCountryVal){
           tempIndex=x.options[i].index;
         }
-      }
+      }*/
 
-      //document.getElementById("select_COUNTRY_CODE").value = optCountryVal;
-      alert(tempIndex);
+      document.getElementById("select_COUNTRY_CODE").value = optCountryVal;
+      /*alert(tempIndex);
       x.selectedIndex=tempIndex;
-      alert(optCountryVal);
-    }, 2000);
+      alert(optCountryVal);*/
+    }, 1000);
 
 
 
