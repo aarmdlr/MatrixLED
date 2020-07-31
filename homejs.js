@@ -63,13 +63,12 @@ function setSelectedOptCountry() {
   for (i = 0; i < x.length; i++) {
     if(x.options[i].value==optCountryVal){
       tempIndex=x.options[i].index;
-      x.selectedIndex=tempIndex;
-      break;
     }
   }
 
   //document.getElementById("select_COUNTRY_CODE").value = optCountryVal;
-
+  alert(tempIndex);
+  x.selectedIndex=tempIndex;
 
 }
 
