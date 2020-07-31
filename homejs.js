@@ -53,15 +53,11 @@ function loadUTCCodes() {
 }
 
 function setSelectedOptCountry() {
-
   setTimeout(
     function() {
       var optCountryVal = document.getElementById("input_COUNTRY_CODE").value;
       document.getElementById("select_COUNTRY_CODE").value = optCountryVal;
     }, 500);
-
-
-
 }
 
 function setSelectedOptUTC() {
@@ -72,10 +68,19 @@ function setSelectedOptUTC() {
     }, 500);
 }
 
+function setSelectedOptStartupMode() {
+  setTimeout(
+    function() {
+      var optModeVal = document.getElementById("input_STARTUP_MODE").value;
+      document.getElementById("select_STARTUP_MODE").value = optModeVal;
+    }, 500);
+}
+
 
 window.onload = function() {
   loadCountryCodes();
   loadUTCCodes();
   setSelectedOptCountry();
   setSelectedOptUTC();
+  setSelectedOptStartupMode();
 };
