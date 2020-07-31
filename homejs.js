@@ -7,24 +7,28 @@
     }
 })();
 
-/*(function () {
+function makeRequestWeather() {
+    var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
+    httpRequest.open('GET', 'http://matrixled.lan/weather'); // service call
+    httpRequest.send();
+}
+
+(function () {
     document.getElementById("btnTime").addEventListener('click', makeRequest);//attaching click event for button
     function makeRequest() {
         var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
         httpRequest.open('GET', 'http://matrixled.lan/time'); // service call
         httpRequest.send();
     }
-})();*/
+})();
 
-/*(function () {
-  document.getElementById("btnTime").addEventListener('click', makeRequest);//attaching click event for button
-  function makeRequest() {
+function makeRequestTime() {
     var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-    httpRequest.open('GET', 'https://aarmdlr.github.io/MatrixLED/country_codes.html'); // service call
+    httpRequest.open('GET', 'http://matrixled.lan/time'); // service call
     httpRequest.send();
-    console.log(httpRequest.responseText);
-  }
-})();*/
+}
+
+
 
 function loadDoc() {
   var xhttp = new XMLHttpRequest();
@@ -36,3 +40,7 @@ function loadDoc() {
   xhttp.open("GET", "https://aarmdlr.github.io/MatrixLED/country_codes.html", true);
   xhttp.send();
 }
+
+window.onload = function() {
+  loadDoc();
+};
