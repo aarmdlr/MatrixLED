@@ -52,7 +52,33 @@ function loadUTCCodes() {
   xhttp.send();
 }
 
+function setSelectedOptCountry() {
+
+  var optCountryVal = document.getElementById("input_COUNTRY_CODE").value;
+
+  /*var x = document.getElementById("select_COUNTRY_CODE");
+  var i;
+  var tempIndex=0;
+
+  for (i = 0; i < x.length; i++) {
+    if(x.options[i].value==optCountryVal){
+      tempIndex=x.options[i].index;
+    }
+  }*/
+
+  document.getElementById("select_COUNTRY_CODE").value = optCountryVal;
+
+}
+
+function setSelectedOptUTC() {
+  var optUTCVal = document.getElementById("input_UTC_CODE").value;
+  document.getElementById("select_UTC_CODE").value = optUTCVal;
+}
+
+
 window.onload = function() {
   loadCountryCodes();
   loadUTCCodes();
+  setSelectedOptCountry();
+  setSelectedOptUTC();
 };
