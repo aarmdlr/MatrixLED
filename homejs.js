@@ -7,26 +7,22 @@
     }
 })();
 
-(function () {
+/*(function () {
     document.getElementById("btnTime").addEventListener('click', makeRequest);//attaching click event for button
     function makeRequest() {
         var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
         httpRequest.open('GET', 'http://matrixled.lan/time'); // service call
         httpRequest.send();
     }
-})();
+})();*/
 
 
 (function () {
-  var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-  httpRequest.open('GET', 'https://aarmdlr.github.io/MatrixLED/country_codes.html'); // service call
-  httpRequest.send();
-  console.log(httpRequest.responseText);
+  document.getElementById("btnTime").addEventListener('click', makeRequest);//attaching click event for button
+  function makeRequest() {
+    var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
+    httpRequest.open('GET', 'https://aarmdlr.github.io/MatrixLED/country_codes.html'); // service call
+    httpRequest.send();
+    console.log(httpRequest.responseText);
+  }
 })();
-
-window.onload = function() {
-  var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-  httpRequest.open('GET', 'https://aarmdlr.github.io/MatrixLED/country_codes.html'); // service call
-  httpRequest.send();
-  console.log(httpRequest.responseText);
-};
