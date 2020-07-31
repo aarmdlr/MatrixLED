@@ -85,6 +85,13 @@ window.onload = function() {
   setSelectedOptStartupMode();
 };
 
+function setImageAsync(addr){
+  var address="http://matrixled.lan/"+addr;
+  var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
+  httpRequest.open('GET', address); // service call
+  httpRequest.send();
+}
+
 
 (function () {
     document.getElementById("btnImageMenu").addEventListener('click', getListFiles);//attaching click event for button
