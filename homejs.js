@@ -90,14 +90,26 @@ window.onload = function() {
     document.getElementById("btnImageMenu").addEventListener('click', getListFiles);//attaching click event for button
 
     function getListFiles() {
+      var arrayFiles;
+      var strHTML="";
+
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           //document.getElementById("select_COUNTRY_CODE").innerHTML = this.responseText;
+          var strFiles = this.responseText;
+          arrayFiles = strFiles.split(",");
           alert(this.responseText);
+
+          for (var i = 0; i < arrayFiles.length; i++) {
+            strHTML=strHTML+"<tr><td>"+arrayFiles[i]+"</td><td><button onclick='setImageAsync("+arrayFiles[i]+")' class='btn btn-primary btnSetImage' >Set Image</button></td></tr>";
+          }
         }
       };
       xhttp.open("GET", "http://matrixled.lan/list", true);
       xhttp.send();
+
+      document.getElementById("tableImages").innerHTML = this.responseText;
+
     }
 })();
