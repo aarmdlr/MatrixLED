@@ -102,8 +102,12 @@ window.onload = function() {
 
 
           for (var i = 0; i < arrayFiles.length; i++) {
-            alert(arrayFiles[i]);
-            strHTML=strHTML+"<tr><td>"+arrayFiles[i]+"</td><td><button onclick='setImageAsync("+arrayFiles[i]+")' class='btn btn-primary btnSetImage' >Set Image</button></td></tr>";
+            if(arrayFiles[i].includes(".jpg")==true){
+              alert(arrayFiles[i]);
+              arrayFiles[i].replace("[", "");
+              arrayFiles[i].replace("]", "");
+              strHTML=strHTML+"<tr><td>"+arrayFiles[i]+"</td><td><button onclick='setImageAsync("+arrayFiles[i]+")' class='btn btn-primary btnSetImage' >Set Image</button></td></tr>";
+            }
           }
           document.getElementById("tableImages").innerHTML = strHTML;
         }
