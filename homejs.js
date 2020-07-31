@@ -115,7 +115,7 @@ function setImageAsync(addr){
               tempArrayFile=tempArrayFile.replace("]", "");
               //alert(tempArrayFile);
 
-              strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><button onclick='setImageAsync('"+tempArrayFile+"')' class='btn btn-primary btnSetImage' >Set Image</button></td></tr>";
+              strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><button onclick='setImageAsync("+'"'+tempArrayFile+'"'+")' class='btn btn-primary btnSetImage' >Set Image</button></td></tr>";
             }
           }
           document.getElementById("tableImages").innerHTML = strHTML;
