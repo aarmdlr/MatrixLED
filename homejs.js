@@ -113,7 +113,7 @@ function setImageAsync(addr){
               tempArrayFile=arrayFiles[i];
               tempArrayFile=tempArrayFile.replace("[", "");
               tempArrayFile=tempArrayFile.replace("]", "");
-              alert(tempArrayFile);
+              //alert(tempArrayFile);
 
               strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><button onclick='setImageAsync('"+tempArrayFile+"')' class='btn btn-primary btnSetImage' >Set Image</button></td></tr>";
             }
