@@ -84,3 +84,15 @@ window.onload = function() {
   setSelectedOptUTC();
   setSelectedOptStartupMode();
 };
+
+function getListFiles() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      //document.getElementById("select_COUNTRY_CODE").innerHTML = this.responseText;
+      alert(this.responseText);
+    }
+  };
+  xhttp.open("GET", "http://matrixled.lan", true);
+  xhttp.send();
+}
