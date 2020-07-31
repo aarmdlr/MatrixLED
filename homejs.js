@@ -69,6 +69,7 @@ function setSelectedOptCountry() {
   //document.getElementById("select_COUNTRY_CODE").value = optCountryVal;
   alert(tempIndex);
   x.selectedIndex=tempIndex;
+  alert(optCountryVal);
 
 }
 
