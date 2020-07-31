@@ -18,10 +18,15 @@
 
 
 (function () {
-    function makeRequest() {
-        var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-        httpRequest.open('GET', 'https://aarmdlr.github.io/MatrixLED/country_codes.html'); // service call
-        httpRequest.send();
-        console.log(httpRequest.responseText);
-    }
+  var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
+  httpRequest.open('GET', 'https://aarmdlr.github.io/MatrixLED/country_codes.html'); // service call
+  httpRequest.send();
+  console.log(httpRequest.responseText);
 })();
+
+window.onload = function() {
+  var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
+  httpRequest.open('GET', 'https://aarmdlr.github.io/MatrixLED/country_codes.html'); // service call
+  httpRequest.send();
+  console.log(httpRequest.responseText);
+};
