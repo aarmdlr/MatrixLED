@@ -99,9 +99,10 @@ window.onload = function() {
           //document.getElementById("select_COUNTRY_CODE").innerHTML = this.responseText;
           var strFiles = this.responseText;
           arrayFiles = strFiles.split(",");
-          alert(this.responseText);
+
 
           for (var i = 0; i < arrayFiles.length; i++) {
+            alert(arrayFiles[i]);
             strHTML=strHTML+"<tr><td>"+arrayFiles[i]+"</td><td><button onclick='setImageAsync("+arrayFiles[i]+")' class='btn btn-primary btnSetImage' >Set Image</button></td></tr>";
           }
         }
