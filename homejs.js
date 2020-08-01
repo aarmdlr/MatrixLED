@@ -128,9 +128,9 @@ function setImageAsync(addr){
       var settingsCD = document.getElementById("settingsContentDiv");
       var imageCD = document.getElementById("imageContentDiv");
 
-      deviceCD.display = "none";
-      settingsCD.display = "none";
-      imageCD.display = "block";
+      deviceCD.style.display = "none";
+      settingsCD.style.display = "none";
+      imageCD.style.display = "block";
 
        /*$("deviceContentDiv").hide();
        $("settingsContentDiv").hide();
