@@ -115,7 +115,7 @@ function setImageAsync(addr){
               tempArrayFile=tempArrayFile.replace("]", "");
               //alert(tempArrayFile);
 
-              strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><button onclick='setImageAsync("+'"'+tempArrayFile+'"'+")' class='btn btn-primary btnSetImage' >Set Image</button><button onclick='setImageAsync("+'"'+eliminarFichero+'"'+")' class='btn btn-danger btnSetImage' >Delete Image</button></td></tr>";
+              strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><button onclick='setImageAsync("+'"'+tempArrayFile+'"'+")' class='btn btn-primary btnSetImage' >Set Image</button><button onclick='eliminarFichero("+'"'+tempArrayFile+'"'+")' class='btn btn-danger btnSetImage' >Delete Image</button></td></tr>";
               //strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><button onclick='eliminarFichero()' class='btn btn-primary btnSetImage' >Set Image</button></td></tr>";
             }
           }
