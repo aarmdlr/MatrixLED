@@ -115,7 +115,8 @@ function setImageAsync(addr){
               tempArrayFile=tempArrayFile.replace("]", "");
               //alert(tempArrayFile);
 
-              strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><button onclick='setImageAsync("+'"'+tempArrayFile+'"'+")' class='btn btn-primary btnSetImage' >Set Image</button></td></tr>";
+              //strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><button onclick='setImageAsync("+'"'+tempArrayFile+'"'+")' class='btn btn-primary btnSetImage' >Set Image</button></td></tr>";
+              strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><button onclick='eliminarFichero()' class='btn btn-primary btnSetImage' >Set Image</button></td></tr>";
             }
           }
           document.getElementById("tableImages").innerHTML = strHTML;
@@ -253,7 +254,7 @@ const http = new easyHTTP();
 
 function eliminarFichero() {
 
-http.delete("http://matrixled.lan/weather4.jpg", function ( err, response ) { 
+http.delete("http://matrixled.lan/weather4.jpg", function ( err, response ) {
 if (err) {
 	console.log(err);
 } else {
