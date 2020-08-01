@@ -124,9 +124,17 @@ function setImageAsync(addr){
       xhttp.open("GET", "http://matrixled.lan/list", true);
       xhttp.send();
 
-       $("deviceContentDiv").hide();
+      var deviceCD = document.getElementById("deviceContentDiv");
+      var settingsCD = document.getElementById("settingsContentDiv");
+      var imageCD = document.getElementById("imageContentDiv");
+
+      deviceCD.display = "none";
+      settingsCD.display = "none";
+      imageCD.display = "block";
+
+       /*$("deviceContentDiv").hide();
        $("settingsContentDiv").hide();
-       $("imageContentDiv").show();
+       $("imageContentDiv").show();*/
 
 
     }
