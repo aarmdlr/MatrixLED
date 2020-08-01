@@ -3,3 +3,6 @@
 .btnSetImage {
     float: right;
 }
+.btnDeleteImage{
+  margin-right: 10px;
+}
