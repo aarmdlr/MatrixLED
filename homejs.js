@@ -139,3 +139,32 @@ function setImageAsync(addr){
 
     }
 })();
+
+
+(function () {
+    document.getElementById("btnMenuSettings").addEventListener('click', showhideDivs);//attaching click event for button
+    function showhideDivs() {
+      var deviceCD = document.getElementById("deviceContentDiv");
+      var settingsCD = document.getElementById("settingsContentDiv");
+      var imageCD = document.getElementById("imageContentDiv");
+
+      deviceCD.style.display = "none";
+      settingsCD.style.display = "block";
+      imageCD.style.display = "none";
+    }
+})();
+
+
+
+(function () {
+    document.getElementById("btnHomeControl").addEventListener('click', showhideDivs);//attaching click event for button
+    function showhideDivs() {
+      var deviceCD = document.getElementById("deviceContentDiv");
+      var settingsCD = document.getElementById("settingsContentDiv");
+      var imageCD = document.getElementById("imageContentDiv");
+
+      deviceCD.style.display = "block";
+      settingsCD.style.display = "none";
+      imageCD.style.display = "none";
+    }
+})();
