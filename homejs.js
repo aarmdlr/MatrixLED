@@ -115,8 +115,8 @@ function setImageAsync(addr){
               tempArrayFile=tempArrayFile.replace("]", "");
               //alert(tempArrayFile);
 
-              //strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><button onclick='setImageAsync("+'"'+tempArrayFile+'"'+")' class='btn btn-primary btnSetImage' >Set Image</button></td></tr>";
-              strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><button onclick='eliminarFichero()' class='btn btn-primary btnSetImage' >Set Image</button></td></tr>";
+              strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><button onclick='setImageAsync("+'"'+tempArrayFile+'"'+")' class='btn btn-primary btnSetImage' >Set Image</button><button onclick='setImageAsync("+'"'+eliminarFichero+'"'+")' class='btn btn-danger btnSetImage' >Delete Image</button></td></tr>";
+              //strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><button onclick='eliminarFichero()' class='btn btn-primary btnSetImage' >Set Image</button></td></tr>";
             }
           }
           document.getElementById("tableImages").innerHTML = strHTML;
@@ -252,9 +252,9 @@ const http = new easyHTTP();
 // Use the delete prototype
 // method with (URL, callback(error, response text))
 
-function eliminarFichero() {
-
-http.delete("http://matrixled.lan/delete?file=weather4.jpg", function ( err, response ) {
+function eliminarFichero(file) {
+alert(file);
+http.delete("http://matrixled.lan/delete?file=/"+file, function ( err, response ) {
 if (err) {
 	console.log(err);
 } else {
