@@ -208,3 +208,57 @@ function setImageAsync(addr){
       imageCD.style.display = "none";
     }
 })();
+
+function easyHTTP() {
+// Initialising new XMLHttpRequest method.
+this.http = new XMLHttpRequest();
+}
+
+// Make an HTTP Delete Request
+easyHTTP.prototype.delete
+= function (url, callback) {
+
+// Open an request (GET/POST/PUT/DELETE,
+// PATH, ASYNC - TRUE/FALSE)
+this.http.open("DELETE", url, true);
+
+// Assigning this to self to have
+// scope of this into the function
+let self = this;
+
+// When the response is ready
+this.http.onload = function () {
+
+	// Checking status
+	if (self.http.status === 200) {
+
+	// Callback function (Error, response text)
+	callback(null, "Post Deleted");
+	} else {
+
+	// Callback function (Error message)
+	callback("Error: " + self.http.status);
+	}
+};
+
+// Send the request
+this.http.send();
+};
+
+// Instantiate easyHTTP
+const http = new easyHTTP();
+
+// Use the delete prototype
+// method with (URL, callback(error, response text))
+
+function eliminarFichero() {
+
+http.delete("http://matrixled.lan/weather4.jpg", function ( err, response ) { 
+if (err) {
+	console.log(err);
+} else {
+	console.log(response);
+}
+});
+
+}
