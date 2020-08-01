@@ -254,7 +254,7 @@ const http = new easyHTTP();
 
 function eliminarFichero() {
 
-http.delete("http://matrixled.lan/delete", function ( err, response ) {
+http.delete("http://matrixled.lan/delete/weather4.jpg", function ( err, response ) {
 if (err) {
 	console.log(err);
 } else {
