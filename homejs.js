@@ -210,6 +210,50 @@ function setImageAsync(addr){
     }
 })();
 
+function getListFiles() {
+  var arrayFiles;
+  var strHTML="";
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      //document.getElementById("select_COUNTRY_CODE").innerHTML = this.responseText;
+      var strFiles = this.responseText;
+      arrayFiles = strFiles.split(",");
+
+
+      for (var i = 0; i < arrayFiles.length; i++) {
+        if(arrayFiles[i].includes(".jpg")==true){
+          tempArrayFile=arrayFiles[i];
+          tempArrayFile=tempArrayFile.replace("[", "");
+          tempArrayFile=tempArrayFile.replace("]", "");
+          //alert(tempArrayFile);
+
+          strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><button onclick='setImageAsync("+'"'+tempArrayFile+'"'+")' class='btn btn-primary btnSetImage' >Set Image</button><button onclick='eliminarFichero("+'"'+tempArrayFile+'"'+")' class='btn btn-danger btnSetImage' >Delete Image</button></td></tr>";
+          //strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><button onclick='eliminarFichero()' class='btn btn-primary btnSetImage' >Set Image</button></td></tr>";
+        }
+      }
+      document.getElementById("tableImages").innerHTML = strHTML;
+    }
+  };
+  xhttp.open("GET", "http://matrixled.lan/list", true);
+  xhttp.send();
+
+  var deviceCD = document.getElementById("deviceContentDiv");
+  var settingsCD = document.getElementById("settingsContentDiv");
+  var imageCD = document.getElementById("imageContentDiv");
+
+  deviceCD.style.display = "none";
+  settingsCD.style.display = "none";
+  imageCD.style.display = "block";
+
+   /*$("deviceContentDiv").hide();
+   $("settingsContentDiv").hide();
+   $("imageContentDiv").show();*/
+
+
+}
+
 function easyHTTP() {
 // Initialising new XMLHttpRequest method.
 this.http = new XMLHttpRequest();
@@ -253,13 +297,17 @@ const http = new easyHTTP();
 // method with (URL, callback(error, response text))
 
 function eliminarFichero(file) {
-alert(file);
+//alert(file);
+
 http.delete("http://matrixled.lan/delete?file=/"+file, function ( err, response ) {
 if (err) {
 	console.log(err);
+  Swal.fire({icon: 'error', title: 'Your file could not be deleted',showConfirmButton: false,timer: 2500});
 } else {
 	console.log(response);
+  Swal.fire({icon: 'success', title: 'Your file has been deleted',showConfirmButton: false,timer: 2500});
 }
+getListFiles();
 });
 
 }
