@@ -356,16 +356,20 @@ function loadAnimations() {
 
                 var myArr = JSON.parse(this.responseText);
                 console.log(myArr);
+
                 //myFunctionJSON(myArr);
 
 
 
+for (i in myArr.Animations){
+  alert(myArr.Animations[i].name);
+}
 
-          for (var i = 0; i < arrayFiles.length; i++) {
+          for (var i = 0; i < myArr.length; i++) {
 
               //alert(tempArrayFile);
 
-              strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><button onclick='setImageAsync("+'"'+tempArrayFile+'"'+")' class='btn btn-primary btnSetImage' >Set Image</button><button onclick='eliminarFichero("+'"'+tempArrayFile+'"'+")' class='btn btn-danger btnSetImage btnDeleteImage' >Delete Image</button></td></tr>";
+              //strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><button onclick='setImageAsync("+'"'+tempArrayFile+'"'+")' class='btn btn-primary btnSetImage' >Set Image</button><button onclick='eliminarFichero("+'"'+tempArrayFile+'"'+")' class='btn btn-danger btnSetImage btnDeleteImage' >Delete Image</button></td></tr>";
 
           }
           document.getElementById("tableImages").innerHTML = strHTML;
