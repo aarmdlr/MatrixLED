@@ -3,22 +3,26 @@
 	"Animations": [{
 			"name": "Mario",
 			"delay": 2500,
-			"frames": 2
+			"frames": 2,
+      "link": "https://aarmdlr.github.io/MatrixLED/animations/mario.txt"
 		},
 		{
 			"name": "Luigi",
 			"delay": 500,
-			"frames": 3
+			"frames": 3,
+      "link": "https://aarmdlr.github.io/MatrixLED/animations/luigi.txt"
 		},
 		{
 			"name": "PACMAN",
 			"delay": 1500,
-			"frames": 5
+			"frames": 5,
+      "link": "https://aarmdlr.github.io/MatrixLED/animations/pacman.txt"
 		},
 		{
 			"name": "Seta",
 			"delay": 200,
-			"frames": 4
+			"frames": 4,
+      "link": "https://aarmdlr.github.io/MatrixLED/animations/seta.txt"
 		}
 	]
 }
