@@ -127,10 +127,12 @@ function setImageAsync(addr){
       var deviceCD = document.getElementById("deviceContentDiv");
       var settingsCD = document.getElementById("settingsContentDiv");
       var imageCD = document.getElementById("imageContentDiv");
+      var animationCD = document.getElementById("animationContentDiv");
 
       deviceCD.style.display = "none";
       settingsCD.style.display = "none";
       imageCD.style.display = "block";
+      animationCD.style.display = "none";
 
 
 
@@ -144,10 +146,12 @@ function setImageAsync(addr){
       var deviceCD = document.getElementById("deviceContentDiv");
       var settingsCD = document.getElementById("settingsContentDiv");
       var imageCD = document.getElementById("imageContentDiv");
+      var animationCD = document.getElementById("animationContentDiv");
 
       deviceCD.style.display = "none";
       settingsCD.style.display = "block";
       imageCD.style.display = "none";
+      animationCD.style.display = "none";
     }
 })();
 
@@ -157,10 +161,12 @@ function setImageAsync(addr){
       var deviceCD = document.getElementById("deviceContentDiv");
       var settingsCD = document.getElementById("settingsContentDiv");
       var imageCD = document.getElementById("imageContentDiv");
+      var animationCD = document.getElementById("animationContentDiv");
 
       deviceCD.style.display = "none";
       settingsCD.style.display = "block";
       imageCD.style.display = "none";
+      animationCD.style.display = "none";
     }
 })();
 
@@ -170,10 +176,12 @@ function setImageAsync(addr){
       var deviceCD = document.getElementById("deviceContentDiv");
       var settingsCD = document.getElementById("settingsContentDiv");
       var imageCD = document.getElementById("imageContentDiv");
+      var animationCD = document.getElementById("animationContentDiv");
 
       deviceCD.style.display = "none";
       settingsCD.style.display = "block";
       imageCD.style.display = "none";
+      animationCD.style.display = "none";
     }
 })();
 
@@ -184,10 +192,12 @@ function setImageAsync(addr){
       var deviceCD = document.getElementById("deviceContentDiv");
       var settingsCD = document.getElementById("settingsContentDiv");
       var imageCD = document.getElementById("imageContentDiv");
+      var animationCD = document.getElementById("animationContentDiv");
 
       deviceCD.style.display = "none";
       settingsCD.style.display = "block";
       imageCD.style.display = "none";
+      animationCD.style.display = "none";
     }
 })();
 
@@ -199,10 +209,12 @@ function setImageAsync(addr){
       var deviceCD = document.getElementById("deviceContentDiv");
       var settingsCD = document.getElementById("settingsContentDiv");
       var imageCD = document.getElementById("imageContentDiv");
+      var animationCD = document.getElementById("animationContentDiv");
 
       deviceCD.style.display = "block";
       settingsCD.style.display = "none";
       imageCD.style.display = "none";
+      animationCD.style.display = "none";
     }
 })();
 
@@ -237,10 +249,12 @@ function getListFiles() {
   var deviceCD = document.getElementById("deviceContentDiv");
   var settingsCD = document.getElementById("settingsContentDiv");
   var imageCD = document.getElementById("imageContentDiv");
+  var animationCD = document.getElementById("animationContentDiv");
 
   deviceCD.style.display = "none";
   settingsCD.style.display = "none";
   imageCD.style.display = "block";
+  animationCD.style.display = "none";
 
 
 
@@ -303,3 +317,85 @@ getListFiles();
 });
 
 }
+
+
+
+
+
+
+function loadAnimations() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      alert(this.responseText);
+    }
+  };
+  xhttp.open("GET", "https://aarmdlr.github.io/MatrixLED/animations.html", true);
+  xhttp.send();
+}
+
+(function () {
+    document.getElementById("btnAnimationMenu").addEventListener('click', getListFilesAnimation);//attaching click event for button
+
+    function getListFilesAnimation() {
+      var arrayFilesAnimations;
+      var arrayFilesFrame;
+      var arrayFilesline;
+      var arrayFilesInfo;
+      var strHTML="";
+
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          //document.getElementById("select_COUNTRY_CODE").innerHTML = this.responseText;
+          /*var strFiles = this.responseText;
+          arrayFilesAnimations = strFiles.split("Animation:");
+            arrayFilesInfo = arrayFilesAnimations.toString().split("Info:");
+              arrayFilesFrame = arrayFilesAnimations.toString().split("Frame:");
+                arrayFilesline= arrayFilesFrame.toString().split(";");*/
+
+                var myArr = JSON.parse(this.responseText);
+                console.log(myArr);
+                //myFunctionJSON(myArr);
+
+
+
+
+          for (var i = 0; i < arrayFiles.length; i++) {
+
+              //alert(tempArrayFile);
+
+              strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><button onclick='setImageAsync("+'"'+tempArrayFile+'"'+")' class='btn btn-primary btnSetImage' >Set Image</button><button onclick='eliminarFichero("+'"'+tempArrayFile+'"'+")' class='btn btn-danger btnSetImage btnDeleteImage' >Delete Image</button></td></tr>";
+
+          }
+          document.getElementById("tableImages").innerHTML = strHTML;
+        }
+      };
+      xhttp.open("GET", "https://aarmdlr.github.io/MatrixLED/animations.txt", true);
+      xhttp.send();
+
+      var deviceCD = document.getElementById("deviceContentDiv");
+      var settingsCD = document.getElementById("settingsContentDiv");
+      var imageCD = document.getElementById("imageContentDiv");
+      var animationCD = document.getElementById("animationContentDiv");
+
+      deviceCD.style.display = "none";
+      settingsCD.style.display = "none";
+      imageCD.style.display = "none";
+      animationCD.style.display = "block";
+
+
+    }
+})();
+
+/*
+function myFunctionJSON(arr) {
+  var out = "";
+  var i;
+  for(i = 0; i < arr.length; i++) {
+    out += '<a href="' + arr[i].url + '">' +
+    arr[i].display + '</a><br>';
+  }
+  document.getElementById("id01").innerHTML = out;
+}
+*/
