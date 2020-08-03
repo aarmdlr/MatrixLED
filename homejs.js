@@ -379,7 +379,7 @@ function setAnimationAsync(id){
 
                 var myArr =this.responseText;
                 console.log(myArr);
-                //console.log(myArr.Animations[1].frames[0][0][0]);
+                console.log(myArr.Animations[1].frames[0][0][0]);
 
 
 
