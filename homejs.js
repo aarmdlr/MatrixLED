@@ -704,7 +704,7 @@ document.getElementById("animationContentDiv").innerHTML = webpage;
 
     // file selected by the user
     // in case of multiple files append each of them
-    data.append('file', documentgetElementById('fileToUpload').files[0]);
+    data.append('file', document.getElementById('fileToUpload').files[0]);
 
     var request = new XMLHttpRequest();
     request.open('post', 'http://matrixled.lan/upload');
