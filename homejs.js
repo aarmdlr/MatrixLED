@@ -339,7 +339,7 @@ function getListFilesAnimation() {
           tempArrayFile=tempArrayFile.replace("]", "");
           //alert(tempArrayFile);
 
-          strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><form method='post' action='/animation' class='box has-advanced-upload' id='formAnimations'><input type='hidden' value='"+tempArrayFile+"'><button type='submit' class='btn btn-primary btnSetImage' >Set Animation</button><button onclick='eliminarFicheroAnimation("+'"'+tempArrayFile+'"'+")' class='btn btn-danger btnSetImage btnDeleteImage' >Delete Animation</button></form></td></tr>";
+          strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><form method='post' action='/animation' class='box has-advanced-upload' id='formAnimations'><input type='hidden' value='"+tempArrayFile+"' name='nameFile'><button type='submit' class='btn btn-primary btnSetImage' >Set Animation</button><button onclick='eliminarFicheroAnimation("+'"'+tempArrayFile+'"'+")' class='btn btn-danger btnSetImage btnDeleteImage' >Delete Animation</button></form></td></tr>";
         }
       }
       document.getElementById("tableImages").innerHTML = strHTML;
