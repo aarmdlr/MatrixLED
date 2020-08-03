@@ -385,7 +385,7 @@ function setAnimationAsync(id){
 
           for (i in myArr.Animations){
             alert(myArr.Animations[i].name);
-            strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><button onclick='setAnimationAsync("+i+")' class='btn btn-primary btnSetImage' >Set Image</button></td></tr>";
+            strHTML=strHTML+"<tr><td>"+myArr.Animations[i].name+"</td><td><button onclick='setAnimationAsync("+i+")' class='btn btn-primary btnSetImage' >Set Image</button></td></tr>";
 
           }
 
