@@ -335,7 +335,7 @@ getListFiles();
 }*/
 
 function setAnimationAsync(id){
-
+  var htmlInputsFormAnimation="";
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -343,11 +343,22 @@ function setAnimationAsync(id){
             var myArr = JSON.parse(this.responseText);
             console.log(myArr);
             //console.log(myArr.Animations[1].frames[0][0][0]);
+            var strDelay=myArr.Animations[id].delay;
+            htmlInputsFormAnimation=htmlInputsFormAnimation+"<input name='delay' type='hidden' value='"+strDelay+"'>";
+
+            //var strNumFrames=myArr.Animations[id].numFrames;
+            //htmlInputsFormAnimation=htmlInputsFormAnimation+"<input name='numFrames' type='hidden' value='"+strNumFrames+"'>";
+
             for (i in myArr.Animations[id].frames){
               for (var j = 0; j < 16; j++) {
-                console.log(myArr.Animations[id].frames[i][j].toString());
+                var strFrameLine=myArr.Animations[id].frames[i][j].toString();
+                console.log(strFrameLine);
+                htmlInputsFormAnimation=htmlInputsFormAnimation+"<input name='"+id+"' type='hidden' value='"+strFrameLine+"'>";
               }
             }
+
+            htmlInputsFormAnimation=htmlInputsFormAnimation+"<button type='submit' id='btnSubmmitSetAnimation' style='display:none'>Enviar</button>";
+            document.getElementById("formAnimations").innerHTML=htmlInputsFormAnimation;
 
 
 
