@@ -128,9 +128,6 @@ webpage+="<div id='carouselExampleControls' class='carousel slide' data-ride='ca
       webpage+="<img class='d-block w-100' src='https://aarmdlr.github.io/MatrixLED/3.jpg'>";
     webpage+="</div>";
     webpage+="<div class='carousel-item'>";
-      webpage+="<img class='d-block w-100' src='https://aarmdlr.github.io/MatrixLED/4.jpg'>";
-    webpage+="</div>";
-    webpage+="<div class='carousel-item'>";
       webpage+="<img class='d-block w-100' src='https://aarmdlr.github.io/MatrixLED/5.gif'>";
     webpage+="</div>";
   webpage+="</div>";
