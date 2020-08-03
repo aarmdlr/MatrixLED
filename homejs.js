@@ -370,7 +370,7 @@ document.getElementById("imageContentDiv").innerHTML = webpage;
               if(request.status == 200){
 
                 Swal.fire({icon: 'success', title: 'Your file has been saved',showConfirmButton: false,timer: 2500})
-                getListFilesAnimation();
+                getListFiles();
               }
 
             	// request.response will hold the response from the server
@@ -633,7 +633,7 @@ function getListFiles() {
         if(request.status == 200){
 
           Swal.fire({icon: 'success', title: 'Your file has been saved',showConfirmButton: false,timer: 2500})
-          getListFilesAnimation();
+          getListFiles();
         }
 
       	// request.response will hold the response from the server
