@@ -699,7 +699,7 @@ getListFilesAnimation();
 
 
 
-
+(function () {
 
 document.querySelector('#upload-button').addEventListener('click', function() {
 	// user has not chosen any file
@@ -765,7 +765,7 @@ document.querySelector('#upload-button').addEventListener('click', function() {
 
 
 
-
+})();
 
 
 
