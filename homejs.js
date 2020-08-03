@@ -672,7 +672,9 @@ document.getElementById("animationContentDiv").innerHTML = webpage;
   document.getElementById('upload-button').addEventListener('click', function() {
   	// user has not chosen any file
   	if(document.getElementById('fileToUpload').files.length == 0) {
-  		alert('Error : No file selected');
+  		//alert('Error : No file selected');
+      Swal.fire({icon: 'error', title: 'Error : No file selected',showConfirmButton: false,timer: 2500})
+
   		return;
   	}
 
@@ -684,18 +686,20 @@ document.getElementById("animationContentDiv").innerHTML = webpage;
 
   	// validate MIME type
   	if(mime_types.indexOf(file.type) == -1) {
-  		alert('Error : Incorrect file type');
+  		//alert('Error : Incorrect file type');
+      Swal.fire({icon: 'error', title: 'Error : Incorrect file type',showConfirmButton: false,timer: 2500})
   		return;
   	}
 
   	// max 2 MB size allowed
   	if(file.size > 2*1024*1024) {
-  		alert('Error : Exceeded size 2MB');
+  		//alert('Error : Exceeded size 2MB');
+      Swal.fire({icon: 'error', title: 'Error : Exceeded size 2MB',showConfirmButton: false,timer: 2500})
   		return;
   	}
 
   	// validation is successful
-  	alert('You have chosen the file ' + file.name);
+  	//alert('You have chosen the file ' + file.name);
 
   	// upload file now
 
@@ -721,6 +725,12 @@ document.getElementById("animationContentDiv").innerHTML = webpage;
     request.addEventListener('load', function(e) {
     	// HTTP status message
     	console.log(request.status);
+
+      if(request.status == 200){
+
+        Swal.fire({icon: 'success', title: 'Your file has been saved',showConfirmButton: false,timer: 2500})
+        getListFilesAnimation();
+      }
 
     	// request.response will hold the response from the server
     	console.log(request.response);
