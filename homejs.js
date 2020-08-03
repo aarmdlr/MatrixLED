@@ -350,10 +350,11 @@ function setAnimationAsync(id){
             //htmlInputsFormAnimation=htmlInputsFormAnimation+"<input name='numFrames' type='hidden' value='"+strNumFrames+"'>";
 
             for (i in myArr.Animations[id].frames){
-              for (var j = 0; j < 16; j++) {
+              for (var j = 0; j < 8; j++) {
                 var strFrameLine=myArr.Animations[id].frames[i][j].toString();
+                strFrameLine+strFrameLine=myArr.Animations[id].frames[i][j+1].toString();
                 console.log(strFrameLine);
-                htmlInputsFormAnimation=htmlInputsFormAnimation+"<input name='"+id+"' type='hidden' value='"+strFrameLine+"'>";
+                htmlInputsFormAnimation=htmlInputsFormAnimation+"<input name='"+i+j+"' type='hidden' value='"+strFrameLine+"'>";
               }
             }
 
