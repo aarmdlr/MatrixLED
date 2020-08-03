@@ -127,12 +127,12 @@ function setImageAsync(addr){
       var deviceCD = document.getElementById("deviceContentDiv");
       var settingsCD = document.getElementById("settingsContentDiv");
       var imageCD = document.getElementById("imageContentDiv");
-      //var animationCD = document.getElementById("animationContentDiv");
+      var animationCD = document.getElementById("animationContentDiv");
 
       deviceCD.style.display = "none";
       settingsCD.style.display = "none";
       imageCD.style.display = "block";
-      //animationCD.style.display = "none";
+      animationCD.style.display = "none";
 
 
 
@@ -146,12 +146,12 @@ function setImageAsync(addr){
       var deviceCD = document.getElementById("deviceContentDiv");
       var settingsCD = document.getElementById("settingsContentDiv");
       var imageCD = document.getElementById("imageContentDiv");
-      //var animationCD = document.getElementById("animationContentDiv");
+      var animationCD = document.getElementById("animationContentDiv");
 
       deviceCD.style.display = "none";
       settingsCD.style.display = "block";
       imageCD.style.display = "none";
-      //animationCD.style.display = "none";
+      animationCD.style.display = "none";
     }
 })();
 
@@ -161,12 +161,12 @@ function setImageAsync(addr){
       var deviceCD = document.getElementById("deviceContentDiv");
       var settingsCD = document.getElementById("settingsContentDiv");
       var imageCD = document.getElementById("imageContentDiv");
-      //var animationCD = document.getElementById("animationContentDiv");
+      var animationCD = document.getElementById("animationContentDiv");
 
       deviceCD.style.display = "none";
       settingsCD.style.display = "block";
       imageCD.style.display = "none";
-      //animationCD.style.display = "none";
+      animationCD.style.display = "none";
     }
 })();
 
@@ -176,12 +176,12 @@ function setImageAsync(addr){
       var deviceCD = document.getElementById("deviceContentDiv");
       var settingsCD = document.getElementById("settingsContentDiv");
       var imageCD = document.getElementById("imageContentDiv");
-      //var animationCD = document.getElementById("animationContentDiv");
+      var animationCD = document.getElementById("animationContentDiv");
 
       deviceCD.style.display = "none";
       settingsCD.style.display = "block";
       imageCD.style.display = "none";
-      //animationCD.style.display = "none";
+      animationCD.style.display = "none";
     }
 })();
 
@@ -192,12 +192,12 @@ function setImageAsync(addr){
       var deviceCD = document.getElementById("deviceContentDiv");
       var settingsCD = document.getElementById("settingsContentDiv");
       var imageCD = document.getElementById("imageContentDiv");
-      //var animationCD = document.getElementById("animationContentDiv");
+      var animationCD = document.getElementById("animationContentDiv");
 
       deviceCD.style.display = "none";
       settingsCD.style.display = "block";
       imageCD.style.display = "none";
-      //animationCD.style.display = "none";
+      animationCD.style.display = "none";
     }
 })();
 
@@ -209,12 +209,12 @@ function setImageAsync(addr){
       var deviceCD = document.getElementById("deviceContentDiv");
       var settingsCD = document.getElementById("settingsContentDiv");
       var imageCD = document.getElementById("imageContentDiv");
-      //var animationCD = document.getElementById("animationContentDiv");
+      var animationCD = document.getElementById("animationContentDiv");
 
       deviceCD.style.display = "block";
       settingsCD.style.display = "none";
       imageCD.style.display = "none";
-      //animationCD.style.display = "none";
+      animationCD.style.display = "none";
     }
 })();
 
@@ -249,12 +249,12 @@ function getListFiles() {
   var deviceCD = document.getElementById("deviceContentDiv");
   var settingsCD = document.getElementById("settingsContentDiv");
   var imageCD = document.getElementById("imageContentDiv");
-  //var animationCD = document.getElementById("animationContentDiv");
+  var animationCD = document.getElementById("animationContentDiv");
 
   deviceCD.style.display = "none";
   settingsCD.style.display = "none";
   imageCD.style.display = "block";
-  //animationCD.style.display = "none";
+  animationCD.style.display = "none";
 
 
 
@@ -320,8 +320,67 @@ getListFiles();
 
 
 
+function getListFilesAnimation() {
+  var arrayFiles;
+  var strHTML="";
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      //document.getElementById("select_COUNTRY_CODE").innerHTML = this.responseText;
+      var strFiles = this.responseText;
+      arrayFiles = strFiles.split(",");
 
 
+      for (var i = 0; i < arrayFiles.length; i++) {
+        if(arrayFiles[i].includes(".txt")==true){
+          tempArrayFile=arrayFiles[i];
+          tempArrayFile=tempArrayFile.replace("[", "");
+          tempArrayFile=tempArrayFile.replace("]", "");
+          //alert(tempArrayFile);
+
+          strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><form method='post' action='/animation' class='box has-advanced-upload' id='formAnimations'><input type='hidden' value='"+tempArrayFile+"'><button type='submit' class='btn btn-primary btnSetImage' >Set Animation</button><button onclick='eliminarFicheroAnimation("+'"'+tempArrayFile+'"'+")' class='btn btn-danger btnSetImage btnDeleteImage' >Delete Animation</button></form></td></tr>";
+        }
+      }
+      document.getElementById("tableImages").innerHTML = strHTML;
+    }
+  };
+  xhttp.open("GET", "http://matrixled.lan/list", true);
+  xhttp.send();
+
+  var deviceCD = document.getElementById("deviceContentDiv");
+  var settingsCD = document.getElementById("settingsContentDiv");
+  var imageCD = document.getElementById("imageContentDiv");
+  var animationCD = document.getElementById("animationContentDiv");
+
+  deviceCD.style.display = "none";
+  settingsCD.style.display = "none";
+  imageCD.style.display = "none";
+  animationCD.style.display = "block";
+
+
+
+}
+
+function eliminarFicheroAnimation(file) {
+//alert(file);
+
+http.delete("http://matrixled.lan/delete?file=/"+file, function ( err, response ) {
+if (err) {
+	console.log(err);
+  Swal.fire({icon: 'error', title: 'Your file could not be deleted',showConfirmButton: false,timer: 2500});
+} else {
+	console.log(response);
+  Swal.fire({icon: 'success', title: 'Your file has been deleted',showConfirmButton: false,timer: 2500});
+}
+getListFilesAnimation();
+});
+
+}
+
+(function () {
+    document.getElementById("btnAnimationMenu").addEventListener('click', getListFilesAnimation);//attaching click event for button
+})();
 
 /*function loadAnimations() {
   var xhttp = new XMLHttpRequest();
@@ -334,7 +393,7 @@ getListFiles();
   xhttp.send();
 }*/
 
-function setAnimationAsync(id){
+/*function setAnimationAsync(id){
   var htmlInputsFormAnimation="";
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -410,7 +469,7 @@ function setAnimationAsync(id){
       var deviceCD = document.getElementById("deviceContentDiv");
       var settingsCD = document.getElementById("settingsContentDiv");
       var imageCD = document.getElementById("imageContentDiv");
-      //var animationCD = document.getElementById("animationContentDiv");
+      var animationCD = document.getElementById("animationContentDiv");
 
       deviceCD.style.display = "none";
       settingsCD.style.display = "none";
@@ -419,7 +478,7 @@ function setAnimationAsync(id){
 
 
     }
-})();
+})();*/
 
 /*
 function myFunctionJSON(arr) {
