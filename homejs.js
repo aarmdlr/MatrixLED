@@ -310,6 +310,78 @@ document.getElementById("imageContentDiv").innerHTML = webpage;
       animationCD.style.display = "none";
 
 
+          document.getElementById('upload-button').addEventListener('click', function() {
+          	// user has not chosen any file
+          	if(document.getElementById('fileToUpload').files.length == 0) {
+          		//alert('Error : No file selected');
+              Swal.fire({icon: 'error', title: 'Error : No file selected',showConfirmButton: false,timer: 2500})
+
+          		return;
+          	}
+
+          	// first file that was chosen
+          	var file = document.getElementById('fileToUpload').files[0];
+
+          	// allowed types
+          	var mime_types = [ 'text/plain' ];
+
+          	// validate MIME type
+          	if(mime_types.indexOf(file.type) == -1) {
+          		//alert('Error : Incorrect file type');
+              Swal.fire({icon: 'error', title: 'Error : Incorrect file type',showConfirmButton: false,timer: 2500})
+          		return;
+          	}
+
+          	// max 2 MB size allowed
+          	if(file.size > 16*1024) {
+          		//alert('Error : Exceeded size 2MB');
+              Swal.fire({icon: 'error', title: 'Error : Exceeded size 16KB',showConfirmButton: false,timer: 2500})
+          		return;
+          	}
+
+          	// validation is successful
+          	//alert('You have chosen the file ' + file.name);
+
+          	// upload file now
+
+
+            var data = new FormData();
+
+            // file selected by the user
+            // in case of multiple files append each of them
+            data.append('file', document.getElementById('fileToUpload').files[0]);
+
+            var request = new XMLHttpRequest();
+            request.open('post', 'http://matrixled.lan/upload');
+
+            // upload progress event
+            request.upload.addEventListener('progress', function(e) {
+            	var percent_complete = (e.loaded / e.total)*100;
+
+            	// Percentage of upload completed
+            	console.log(percent_complete);
+            });
+
+            // AJAX request finished event
+            request.addEventListener('load', function(e) {
+            	// HTTP status message
+            	console.log(request.status);
+
+              if(request.status == 200){
+
+                Swal.fire({icon: 'success', title: 'Your file has been saved',showConfirmButton: false,timer: 2500})
+                getListFilesAnimation();
+              }
+
+            	// request.response will hold the response from the server
+            	console.log(request.response);
+            });
+
+            // send POST request to server side script
+            request.send(data);
+
+          });
+
 
     }
 })();
