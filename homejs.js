@@ -103,6 +103,12 @@ var deviceNameSTR=document.getElementById("input_deviceNameSTR_H").value
       webpage += "</div>";
 
   document.getElementById("settingsContentDiv").innerHTML = webpage;
+
+  loadCountryCodes();
+  loadUTCCodes();
+  setSelectedOptCountry();
+  setSelectedOptUTC();
+  setSelectedOptStartupMode();
 }
 
 
@@ -193,11 +199,7 @@ function setSelectedOptStartupMode() {
 
 window.onload = function() {
   getPageSettingsHTML();
-  loadCountryCodes();
-  loadUTCCodes();
-  setSelectedOptCountry();
-  setSelectedOptUTC();
-  setSelectedOptStartupMode();
+
 };
 
 function setImageAsync(addr){
