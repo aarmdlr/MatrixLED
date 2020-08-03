@@ -692,9 +692,9 @@ document.getElementById("animationContentDiv").innerHTML = webpage;
   	}
 
   	// max 2 MB size allowed
-  	if(file.size > 2*1024*1024) {
+  	if(file.size > 16*1024) {
   		//alert('Error : Exceeded size 2MB');
-      Swal.fire({icon: 'error', title: 'Error : Exceeded size 2MB',showConfirmButton: false,timer: 2500})
+      Swal.fire({icon: 'error', title: 'Error : Exceeded size 16KB',showConfirmButton: false,timer: 2500})
   		return;
   	}
 
