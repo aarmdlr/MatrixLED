@@ -198,9 +198,128 @@ document.getElementById("imageContentDiv").innerHTML = webpage;
 })();
 
 
+
+
+
+
+
+function getPageSettingsHTML(){
+
+var ZIPCodeSTR=document.getElementById("input_ZIPCodeSTR_H").value
+var countryCodeSTR=document.getElementById("input_countryCodeSTR_H").value
+var deviceNameSTR=document.getElementById("input_deviceNameSTR_H").value
+
+
+
+
+    var webpage="";
+      webpage += "<div class='d-sm-flex align-items-center justify-content-between mb-4'>";
+        webpage += "<h1 class='h3 mb-0 text-gray-800'>Settings</h1>";
+      webpage += "</div>";
+
+      webpage += "<div class='row'>";
+
+        webpage += "<div class='col-xl-12 col-sm-12 col-xl-12 col-md-12 mb-4'>";
+          webpage += "<div class='card shadow h-100 py-2'>";
+            webpage += "<div class='card-body'>";
+              webpage += "<div class='row no-gutters align-items-center'>";
+                webpage += "<div class='col '>";
+                  webpage += "<div class='col-12' style='padding: 0px;'>";
+                    webpage += "<form action='/' method='POST'>";
+
+                      webpage += "<div class='d-sm-flex align-items-center justify-content-between mb-4' id='containerStartupMode'>";
+                        webpage += "<h1 class='h5 mb-0 text-gray-800'>Startup Mode</h1>";
+                      webpage += "</div>";
+
+                    webpage += "<table class='table'>";
+
+                      webpage += "<tr><td>Startup mode<div class='form-text text-muted small'>Modo por defecto al iniciar";
+                      webpage += "la matriz LED. Selecciona uno de la lista desplegable.</div></td><td>";
+                      //webpage += "<input id='input_STARTUP_MODE' type='hidden' value='"+((String)STARTUP_MODE)+"'>";
+                      webpage += "<select class='form-control' name='STARTUP_MODE' id='select_STARTUP_MODE'>";
+                        webpage += "<option value='0'>Weather</option>";
+                        webpage += "<option value='1'>Time</option>";
+                      webpage += "</select>";
+                      webpage += "</td></tr>";
+                    webpage += "</table>";
+
+                    webpage += "<br><br><div class='d-sm-flex align-items-center justify-content-between mb-4' id='containerWeatherLoacation'>";
+                      webpage += "<h1 class='h5 mb-0 text-gray-800'>Weather location</h1>";
+                    webpage += "</div>";
+
+                    webpage += "<table class='table'>";
+
+                      webpage += "<tr><td>ZIP Code<div class='form-text text-muted small'>Introduce el codigo postal (ZIP / CP)";
+                      webpage += " de la localidad que desea mostrar el tiempo climatologico.</div></td><td>";
+                        webpage += "<input class='form-control' type='number' min='0' placeholder='ZIP / CP' name='ZIP_CODE' value='"+ZIPCodeSTR+"'>";
+                      webpage += "</td></tr>";
+
+
+                      webpage += "<tr><td>Country Code<div class='form-text text-muted small'>Selecciona el código del pais de la";
+                      webpage += "localidad que desea mostrar el tiempo climatologico.</div></td><td>";
+                      webpage += "<input id='input_COUNTRY_CODE' type='hidden' value='"+countryCodeSTR+"'>";
+                        webpage += "<select class='form-control' name='COUNTRY_CODE' id='select_COUNTRY_CODE' >";
+
+                        webpage += "</select>";
+                      webpage += "</td></tr>";
+                    webpage += "</table>";
+
+
+                    webpage += "<br><br><div class='d-sm-flex align-items-center justify-content-between mb-4' id='containerTimeLoacation'>";
+                      webpage += "<h1 class='h5 mb-0 text-gray-800'>Time location</h1>";
+                    webpage += "</div>";
+
+                    webpage += "<table class='table'>";
+
+                      webpage += "<tr><td>UTC Code<div class='form-text text-muted small'>Selecciona el código de la franja horaria UTC ";
+                      webpage += "del pais que desea mostrar la hora.</div></td><td>";
+                      //webpage += "<input id='input_UTC_CODE' type='hidden' value='"+((String)UTC_CODE)+"'>";
+                        webpage += "<select class='form-control' name='UTC_CODE' id='select_UTC_CODE' >";
+
+                        webpage += "</select>";
+                      webpage += "</td></tr>";
+                    webpage += "</table>";
+
+                    webpage += "<br><br><div class='d-sm-flex align-items-center justify-content-between mb-4' id='containerDeviceName'>";
+                      webpage += "<h1 class='h5 mb-0 text-gray-800'>Device name</h1>";
+                    webpage += "</div>";
+
+                    webpage += "<table class='table'>";
+
+                      webpage += "<tr><td>Device name<div class='form-text text-muted small'>Intriduce el nombre del dispositivo con el que desea ";
+                      webpage += "acceder a el panel de control del dispositivo desde su navegador/explorador de internet (Hostname). ";
+                      webpage += " <b>Para acceder al panel de control debe poner en su navegador 'http://hostname.lan'<b/>.</div></td><td>";
+                      webpage += "<input class='form-control' type='text' name='DEVICE_NAME' value='"+deviceNameSTR+"'>";
+                      webpage += "</td></tr>";
+
+                    webpage += "</table>";
+
+                    webpage += "<div class='form-group'>";
+                      webpage += "<button type='submit' class='btn btn-primary'>Guardar</button>";
+                    webpage += "</div>";
+                  webpage += "</form>";
+                  webpage += "</div>";
+                webpage += "</div>";
+              webpage += "</div>";
+            webpage += "</div>";
+          webpage += "</div>";
+        webpage += "</div>";
+      webpage += "</div>";
+
+  document.getElementById("settingsContentDiv").innerHTML = webpage;
+}
+
+
+
+
+
+
+
+
 (function () {
     document.getElementById("btnMenuSettings").addEventListener('click', showhideDivs);//attaching click event for button
     function showhideDivs() {
+      getPageSettingsHTML();
       var deviceCD = document.getElementById("deviceContentDiv");
       var settingsCD = document.getElementById("settingsContentDiv");
       var imageCD = document.getElementById("imageContentDiv");
@@ -216,6 +335,7 @@ document.getElementById("imageContentDiv").innerHTML = webpage;
 (function () {
     document.getElementById("btnMenuSettings2").addEventListener('click', showhideDivs);//attaching click event for button
     function showhideDivs() {
+      getPageSettingsHTML();
       var deviceCD = document.getElementById("deviceContentDiv");
       var settingsCD = document.getElementById("settingsContentDiv");
       var imageCD = document.getElementById("imageContentDiv");
@@ -231,6 +351,7 @@ document.getElementById("imageContentDiv").innerHTML = webpage;
 (function () {
     document.getElementById("btnMenuSettings3").addEventListener('click', showhideDivs);//attaching click event for button
     function showhideDivs() {
+      getPageSettingsHTML();
       var deviceCD = document.getElementById("deviceContentDiv");
       var settingsCD = document.getElementById("settingsContentDiv");
       var imageCD = document.getElementById("imageContentDiv");
@@ -247,6 +368,7 @@ document.getElementById("imageContentDiv").innerHTML = webpage;
 (function () {
     document.getElementById("btnMenuSettings4").addEventListener('click', showhideDivs);//attaching click event for button
     function showhideDivs() {
+      getPageSettingsHTML();
       var deviceCD = document.getElementById("deviceContentDiv");
       var settingsCD = document.getElementById("settingsContentDiv");
       var imageCD = document.getElementById("imageContentDiv");
@@ -438,7 +560,7 @@ function sendPostSetAnimation(nameFileAnimation) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("demo").innerHTML = this.responseText;
+      //document.getElementById("demo").innerHTML = this.responseText;
     }
   };
   xhttp.open("POST", "http://matrixled.lan/animation", true);
