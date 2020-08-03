@@ -318,7 +318,17 @@ getListFiles();
 
 }
 
-
+function sendPostSetAnimation(nameFileAnimation) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("POST", "http://matrixled.lan/animation", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send("name="+nameFileAnimation+"&delay="+500);
+}
 
 function getListFilesAnimation() {
   var arrayFiles;
@@ -339,7 +349,7 @@ function getListFilesAnimation() {
           tempArrayFile=tempArrayFile.replace("]", "");
           //alert(tempArrayFile);
 
-          strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><form method='post' action='/animation' class='box has-advanced-upload' id='formAnimations'><input type='hidden' value='"+tempArrayFile+"' name='nameFile'><button type='submit' class='btn btn-primary btnSetImage' >Set Animation</button><button onclick='eliminarFicheroAnimation("+'"'+tempArrayFile+'"'+")' class='btn btn-danger btnSetImage btnDeleteImage' >Delete Animation</button></form></td></tr>";
+          strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><button onclick='sendPostSetAnimation('"+tempArrayFile+"')' class='btn btn-primary btnSetImage'>Set Animation</button><button onclick='eliminarFicheroAnimation("+'"'+tempArrayFile+'"'+")' class='btn btn-danger btnSetImage btnDeleteImage' >Delete Animation</button></td></tr>";
         }
       }
       document.getElementById("tableImages").innerHTML = strHTML;
