@@ -277,6 +277,64 @@ document.getElementById("imageContentDiv").innerHTML = webpage;
 })();
 
 function getListFiles() {
+
+
+  var webpage="";
+        webpage += "<div class='d-sm-flex align-items-center justify-content-between mb-4'>";
+    webpage += "<h1 class='h3 mb-0 text-gray-800'>Image</h1>";
+  webpage += "</div>";
+
+  webpage += "<div class='row'>";
+
+    webpage += "<div class='col-xl-12 col-sm-12 col-xl-12 col-md-12 mb-4'>";
+      webpage += "<div class='card shadow h-100 py-2'>";
+        webpage += "<div class='card-body'>";
+          webpage += "<div class='row no-gutters align-items-center'>";
+            webpage += "<div class='col '>";
+              webpage += "<div class='col-12' style='padding: 0px;'>";
+
+
+                  webpage += "<div class='d-sm-flex align-items-center justify-content-between mb-4'>";
+                    webpage += "<h1 class='h5 mb-0 text-gray-800'>Images Files</h1>";
+                  webpage += "</div>";
+
+                webpage += "<table class='table' id='tableImages'>";
+
+
+                webpage += "</table>";
+
+
+
+
+
+                webpage += "<br><br><div class='d-sm-flex align-items-center justify-content-between mb-4' id='containerDeviceName'>";
+                  webpage += "<h1 class='h5 mb-0 text-gray-800'>Upload Image</h1>";
+                webpage += "</div>";
+
+                webpage += "<form method='post' action='/upload' enctype='multipart/form-data' class='box has-advanced-upload' > ";
+                webpage += "<table class='table'>";
+
+                  webpage += "<tr><td><input type='file' name='fileToUpload' id='fileToUpload' accept='image/jpeg'></td><td>";
+                  webpage += "<button type='submit' class='btn btn-primary' style='float: right;'>Upload</button>";
+                  webpage += "</td></tr>";
+
+                webpage += "</table>";
+                  webpage += "</form>";
+
+
+
+              webpage += "</div>";
+            webpage += "</div>";
+          webpage += "</div>";
+        webpage += "</div>";
+      webpage += "</div>";
+    webpage += "</div>";
+  webpage += "</div>";
+
+
+  document.getElementById("imageContentDiv").innerHTML = webpage;
+
+
   var arrayFiles;
   var strHTML="";
 
@@ -389,6 +447,62 @@ function sendPostSetAnimation(nameFileAnimation) {
 }
 
 function getListFilesAnimation() {
+  var webpage="";
+
+  webpage += "<div class='d-sm-flex align-items-center justify-content-between mb-4'>";
+      webpage += "<h1 class='h3 mb-0 text-gray-800'>Animation</h1>";
+    webpage += "</div>";
+
+    webpage += "<div class='row'>";
+
+      webpage += "<div class='col-xl-12 col-sm-12 col-xl-12 col-md-12 mb-4'>";
+        webpage += "<div class='card shadow h-100 py-2'>";
+          webpage += "<div class='card-body'>";
+            webpage += "<div class='row no-gutters align-items-center'>";
+              webpage += "<div class='col '>";
+                webpage += "<div class='col-12' style='padding: 0px;'>";
+
+
+                    webpage += "<div class='d-sm-flex align-items-center justify-content-between mb-4'>";
+                      webpage += "<h1 class='h5 mb-0 text-gray-800'>Animations</h1>";
+                    webpage += "</div>";
+
+                  webpage += "<table class='table' id='tableAnimations'>";
+
+
+                  webpage += "</table>";
+
+
+
+
+
+                  webpage += "<br><br><div class='d-sm-flex align-items-center justify-content-between mb-4' id='containerDeviceName'>";
+                    webpage += "<h1 class='h5 mb-0 text-gray-800'>Upload Animation</h1>";
+                  webpage += "</div>";
+
+                  webpage += "<form method='post' action='/upload' enctype='multipart/form-data' class='box has-advanced-upload' > ";
+                  webpage += "<table class='table'>";
+
+                    webpage += "<tr><td><input type='file' name='fileToUpload' id='fileToUpload' accept='.txt'></td><td>";
+                    webpage += "<button type='submit' class='btn btn-primary' style='float: right;'>Upload</button>";
+                    webpage += "</td></tr>";
+
+                  webpage += "</table>";
+                    webpage += "</form>";
+
+
+
+                webpage += "</div>";
+              webpage += "</div>";
+            webpage += "</div>";
+          webpage += "</div>";
+        webpage += "</div>";
+      webpage += "</div>";
+    webpage += "</div>";
+
+document.getElementById("animationContentDiv").innerHTML = webpage;
+
+
   var arrayFiles;
   var strHTML="";
 
@@ -410,7 +524,7 @@ function getListFilesAnimation() {
           strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><button onclick='sendPostSetAnimation("+'"'+tempArrayFile+'"'+")' class='btn btn-primary btnSetImage'>Set Animation</button><button onclick='eliminarFicheroAnimation("+'"'+tempArrayFile+'"'+")' class='btn btn-danger btnSetImage btnDeleteImage' >Delete Animation</button></td></tr>";
         }
       }
-      document.getElementById("tableImages").innerHTML = strHTML;
+      document.getElementById("tableAnimations").innerHTML = strHTML;
     }
   };
   xhttp.open("GET", "http://matrixled.lan/list", true);
