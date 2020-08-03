@@ -680,7 +680,7 @@ document.getElementById("animationContentDiv").innerHTML = webpage;
   	var file = document.getElementById('fileToUpload').files[0];
 
   	// allowed types
-  	var mime_types = [ '.txt' ];
+  	var mime_types = [ 'text/plain' ];
 
   	// validate MIME type
   	if(mime_types.indexOf(file.type) == -1) {
