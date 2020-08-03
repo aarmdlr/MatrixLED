@@ -701,15 +701,15 @@ getListFilesAnimation();
 
 (function () {
 
-document.querySelector('#upload-button').addEventListener('click', function() {
+document.getElementById('upload-button').addEventListener('click', function() {
 	// user has not chosen any file
-	if(document.querySelector('#fileToUpload').files.length == 0) {
+	if(document.getElementById('fileToUpload').files.length == 0) {
 		alert('Error : No file selected');
 		return;
 	}
 
 	// first file that was chosen
-	var file = document.querySelector('#fileToUpload').files[0];
+	var file = document.getElementById('fileToUpload').files[0];
 
 	// allowed types
 	var mime_types = [ '.txt' ];
@@ -736,7 +736,7 @@ document.querySelector('#upload-button').addEventListener('click', function() {
 
   // file selected by the user
   // in case of multiple files append each of them
-  data.append('file', document.querySelector('#fileToUpload').files[0]);
+  data.append('file', documentgetElementById('fileToUpload').files[0]);
 
   var request = new XMLHttpRequest();
   request.open('post', 'http://matrixled.lan/upload');
