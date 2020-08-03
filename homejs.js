@@ -112,6 +112,43 @@ var deviceNameSTR=document.getElementById("input_deviceNameSTR_H").value
 }
 
 
+function homeBody(){
+
+var webpage="";
+
+webpage+="<div id='carouselExampleControls' class='carousel slide' data-ride='carousel'>";
+  webpage+="<div class='carousel-inner'>";
+    webpage+="<div class='carousel-item active'>";
+      webpage+="<img class='d-block w-100' src='https://aarmdlr.github.io/MatrixLED/1.jpg'>";
+    webpage+="</div>";
+    webpage+="<div class='carousel-item'>";
+      webpage+="<img class='d-block w-100' src='https://aarmdlr.github.io/MatrixLED/2.jpg'>";
+    webpage+="</div>";
+    webpage+="<div class='carousel-item'>";
+      webpage+="<img class='d-block w-100' src='https://aarmdlr.github.io/MatrixLED/3.jpg'>";
+    webpage+="</div>";
+    webpage+="<div class='carousel-item'>";
+      webpage+="<img class='d-block w-100' src='https://aarmdlr.github.io/MatrixLED/4.jpg'>";
+    webpage+="</div>";
+    webpage+="<div class='carousel-item'>";
+      webpage+="<img class='d-block w-100' src='https://aarmdlr.github.io/MatrixLED/5.gif'>";
+    webpage+="</div>";
+  webpage+="</div>";
+  webpage+="<a class='carousel-control-prev' href='#carouselExampleControls' role='button' data-slide='prev'>";
+    webpage+="<span class='carousel-control-prev-icon' aria-hidden='true'></span>";
+    webpage+="<span class='sr-only'>Previous</span>";
+  webpage+="</a>";
+  webpage+="<a class='carousel-control-next' href='#carouselExampleControls' role='button' data-slide='next'>";
+    webpage+="<span class='carousel-control-next-icon' aria-hidden='true'></span>";
+    webpage+="<span class='sr-only'>Next</span>";
+  webpage+="</a>";
+webpage+="</div>";
+
+
+
+  document.getElementById("deviceContentDivBody").innerHTML=webpage;
+}
+
 
 
 
@@ -198,6 +235,7 @@ function setSelectedOptStartupMode() {
 
 
 window.onload = function() {
+  homeBody();
   getPageSettingsHTML();
 
 };
