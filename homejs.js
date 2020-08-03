@@ -78,6 +78,7 @@ function setSelectedOptStartupMode() {
 
 
 window.onload = function() {
+  getPageSettingsHTML();
   loadCountryCodes();
   loadUTCCodes();
   setSelectedOptCountry();
