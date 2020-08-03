@@ -344,7 +344,6 @@ function setAnimationAsync(id){
             console.log(myArr);
             //console.log(myArr.Animations[1].frames[0][0][0]);
             console.log(myArr.Animations[id].frames.length());
-            console.log(myArr.Animations[id].frames.length;
             for (var i = 0; i < myArr.Animations[id].frames.length() ; i++) {
               for (var j = 0; j < 16; j++) {
                 console.log(myArr.Animations[id].frames[i][j].toString());
