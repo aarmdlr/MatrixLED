@@ -377,7 +377,7 @@ function setAnimationAsync(id){
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
 
-                var myArr =this.responseText;
+                var myArr = JSON.parse(this.responseText);
                 console.log(myArr);
                 console.log(myArr.Animations[1].frames[0][0][0]);
 
