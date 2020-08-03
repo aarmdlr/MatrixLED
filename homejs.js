@@ -97,6 +97,64 @@ function setImageAsync(addr){
     document.getElementById("btnImageMenu").addEventListener('click', getListFiles);//attaching click event for button
 
     function getListFiles() {
+
+var webpage="";
+      webpage += "<div class='d-sm-flex align-items-center justify-content-between mb-4'>";
+  webpage += "<h1 class='h3 mb-0 text-gray-800'>Image</h1>";
+webpage += "</div>";
+
+webpage += "<div class='row'>";
+
+  webpage += "<div class='col-xl-12 col-sm-12 col-xl-12 col-md-12 mb-4'>";
+    webpage += "<div class='card shadow h-100 py-2'>";
+      webpage += "<div class='card-body'>";
+        webpage += "<div class='row no-gutters align-items-center'>";
+          webpage += "<div class='col '>";
+            webpage += "<div class='col-12' style='padding: 0px;'>";
+
+
+                webpage += "<div class='d-sm-flex align-items-center justify-content-between mb-4'>";
+                  webpage += "<h1 class='h5 mb-0 text-gray-800'>Images Files</h1>";
+                webpage += "</div>";
+
+              webpage += "<table class='table' id='tableImages'>";
+
+
+              webpage += "</table>";
+
+
+
+
+
+              webpage += "<br><br><div class='d-sm-flex align-items-center justify-content-between mb-4' id='containerDeviceName'>";
+                webpage += "<h1 class='h5 mb-0 text-gray-800'>Upload Image</h1>";
+              webpage += "</div>";
+
+              webpage += "<form method='post' action='/upload' enctype='multipart/form-data' class='box has-advanced-upload' > ";
+              webpage += "<table class='table'>";
+
+                webpage += "<tr><td><input type='file' name='fileToUpload' id='fileToUpload' accept='image/jpeg'></td><td>";
+                webpage += "<button type='submit' class='btn btn-primary' style='float: right;'>Upload</button>";
+                webpage += "</td></tr>";
+
+              webpage += "</table>";
+                webpage += "</form>";
+
+
+
+            webpage += "</div>";
+          webpage += "</div>";
+        webpage += "</div>";
+      webpage += "</div>";
+    webpage += "</div>";
+  webpage += "</div>";
+webpage += "</div>";
+
+
+document.getElementById("imageContentDiv").innerHTML = webpage;
+
+
+
       var arrayFiles;
       var strHTML="";
 
