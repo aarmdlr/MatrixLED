@@ -126,13 +126,13 @@ function setImageAsync(addr){
 
       var deviceCD = document.getElementById("deviceContentDiv");
       var settingsCD = document.getElementById("settingsContentDiv");
-      //var imageCD = document.getElementById("imageContentDiv");
-      var animationCD = document.getElementById("animationContentDiv");
+      var imageCD = document.getElementById("imageContentDiv");
+      //var animationCD = document.getElementById("animationContentDiv");
 
       deviceCD.style.display = "none";
       settingsCD.style.display = "none";
-      //imageCD.style.display = "block";
-      animationCD.style.display = "none";
+      imageCD.style.display = "block";
+      //animationCD.style.display = "none";
 
 
 
@@ -145,13 +145,13 @@ function setImageAsync(addr){
     function showhideDivs() {
       var deviceCD = document.getElementById("deviceContentDiv");
       var settingsCD = document.getElementById("settingsContentDiv");
-      //var imageCD = document.getElementById("imageContentDiv");
-      var animationCD = document.getElementById("animationContentDiv");
+      var imageCD = document.getElementById("imageContentDiv");
+      //var animationCD = document.getElementById("animationContentDiv");
 
       deviceCD.style.display = "none";
       settingsCD.style.display = "block";
       imageCD.style.display = "none";
-      animationCD.style.display = "none";
+      //animationCD.style.display = "none";
     }
 })();
 
@@ -160,13 +160,13 @@ function setImageAsync(addr){
     function showhideDivs() {
       var deviceCD = document.getElementById("deviceContentDiv");
       var settingsCD = document.getElementById("settingsContentDiv");
-      //var imageCD = document.getElementById("imageContentDiv");
-      var animationCD = document.getElementById("animationContentDiv");
+      var imageCD = document.getElementById("imageContentDiv");
+      //var animationCD = document.getElementById("animationContentDiv");
 
       deviceCD.style.display = "none";
       settingsCD.style.display = "block";
       imageCD.style.display = "none";
-      animationCD.style.display = "none";
+      //animationCD.style.display = "none";
     }
 })();
 
@@ -175,13 +175,13 @@ function setImageAsync(addr){
     function showhideDivs() {
       var deviceCD = document.getElementById("deviceContentDiv");
       var settingsCD = document.getElementById("settingsContentDiv");
-      //var imageCD = document.getElementById("imageContentDiv");
-      var animationCD = document.getElementById("animationContentDiv");
+      var imageCD = document.getElementById("imageContentDiv");
+      //var animationCD = document.getElementById("animationContentDiv");
 
       deviceCD.style.display = "none";
       settingsCD.style.display = "block";
       imageCD.style.display = "none";
-      animationCD.style.display = "none";
+      //animationCD.style.display = "none";
     }
 })();
 
@@ -191,13 +191,13 @@ function setImageAsync(addr){
     function showhideDivs() {
       var deviceCD = document.getElementById("deviceContentDiv");
       var settingsCD = document.getElementById("settingsContentDiv");
-      //var imageCD = document.getElementById("imageContentDiv");
-      var animationCD = document.getElementById("animationContentDiv");
+      var imageCD = document.getElementById("imageContentDiv");
+      //var animationCD = document.getElementById("animationContentDiv");
 
       deviceCD.style.display = "none";
       settingsCD.style.display = "block";
       imageCD.style.display = "none";
-      animationCD.style.display = "none";
+      //animationCD.style.display = "none";
     }
 })();
 
@@ -208,13 +208,13 @@ function setImageAsync(addr){
     function showhideDivs() {
       var deviceCD = document.getElementById("deviceContentDiv");
       var settingsCD = document.getElementById("settingsContentDiv");
-      //var imageCD = document.getElementById("imageContentDiv");
-      var animationCD = document.getElementById("animationContentDiv");
+      var imageCD = document.getElementById("imageContentDiv");
+      //var animationCD = document.getElementById("animationContentDiv");
 
       deviceCD.style.display = "block";
       settingsCD.style.display = "none";
       imageCD.style.display = "none";
-      animationCD.style.display = "none";
+      //animationCD.style.display = "none";
     }
 })();
 
@@ -248,13 +248,13 @@ function getListFiles() {
 
   var deviceCD = document.getElementById("deviceContentDiv");
   var settingsCD = document.getElementById("settingsContentDiv");
-  //var imageCD = document.getElementById("imageContentDiv");
-  var animationCD = document.getElementById("animationContentDiv");
+  var imageCD = document.getElementById("imageContentDiv");
+  //var animationCD = document.getElementById("animationContentDiv");
 
   deviceCD.style.display = "none";
   settingsCD.style.display = "none";
-  //imageCD.style.display = "block";
-  animationCD.style.display = "none";
+  imageCD.style.display = "block";
+  //animationCD.style.display = "none";
 
 
 
@@ -409,8 +409,8 @@ function setAnimationAsync(id){
 
       var deviceCD = document.getElementById("deviceContentDiv");
       var settingsCD = document.getElementById("settingsContentDiv");
-      //var imageCD = document.getElementById("imageContentDiv");
-      var animationCD = document.getElementById("animationContentDiv");
+      var imageCD = document.getElementById("imageContentDiv");
+      //var animationCD = document.getElementById("animationContentDiv");
 
       deviceCD.style.display = "none";
       settingsCD.style.display = "none";
