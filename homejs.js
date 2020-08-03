@@ -323,7 +323,7 @@ getListFiles();
 
 
 
-function loadAnimations() {
+/*function loadAnimations() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -332,7 +332,37 @@ function loadAnimations() {
   };
   xhttp.open("GET", "https://aarmdlr.github.io/MatrixLED/animations.html", true);
   xhttp.send();
+}*/
+
+function setAnimationAsync(id){
+
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+
+            var myArr = JSON.parse(this.responseText);
+            console.log(myArr);
+            //console.log(myArr.Animations[1].frames[0][0][0]);
+            console.log(myArr.Animations[id].frames.length());
+            console.log(myArr.Animations[id].frames.length;
+            for (var i = 0; i < myArr.Animations[id].frames.length() ; i++) {
+              for (var j = 0; j < 16; j++) {
+                console.log(myArr.Animations[id].frames[i][j].toString());
+              }
+            }
+
+
+
+    }
+  };
+  xhttp.open("GET", "https://aarmdlr.github.io/MatrixLED/animations.txt", true);
+  xhttp.send();
+
+
 }
+
+
+
 
 (function () {
     document.getElementById("btnAnimationMenu").addEventListener('click', getListFilesAnimation);//attaching click event for button
@@ -347,32 +377,21 @@ function loadAnimations() {
       var xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-          //document.getElementById("select_COUNTRY_CODE").innerHTML = this.responseText;
-          /*var strFiles = this.responseText;
-          arrayFilesAnimations = strFiles.split("Animation:");
-            arrayFilesInfo = arrayFilesAnimations.toString().split("Info:");
-              arrayFilesFrame = arrayFilesAnimations.toString().split("Frame:");
-                arrayFilesline= arrayFilesFrame.toString().split(";");*/
 
                 var myArr = JSON.parse(this.responseText);
                 console.log(myArr);
-
-                //myFunctionJSON(myArr);
-
+                //console.log(myArr.Animations[1].frames[0][0][0]);
 
 
-for (i in myArr.Animations){
-  alert(myArr.Animations[i].name);
-}
 
-          for (var i = 0; i < myArr.length; i++) {
-
-              //alert(tempArrayFile);
-
-              //strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><button onclick='setImageAsync("+'"'+tempArrayFile+'"'+")' class='btn btn-primary btnSetImage' >Set Image</button><button onclick='eliminarFichero("+'"'+tempArrayFile+'"'+")' class='btn btn-danger btnSetImage btnDeleteImage' >Delete Image</button></td></tr>";
+          for (i in myArr.Animations){
+            alert(myArr.Animations[i].name);
+            strHTML=strHTML+"<tr><td>"+tempArrayFile+"</td><td><button onclick='setAnimationAsync("+i+")' class='btn btn-primary btnSetImage' >Set Image</button></td></tr>";
 
           }
-          document.getElementById("tableImages").innerHTML = strHTML;
+
+
+          document.getElementById("tableAnimations").innerHTML = strHTML;
         }
       };
       xhttp.open("GET", "https://aarmdlr.github.io/MatrixLED/animations.txt", true);
