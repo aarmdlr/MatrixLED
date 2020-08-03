@@ -354,7 +354,7 @@ function setAnimationAsync(id){
 
     }
   };
-  xhttp.open("GET", "https://aarmdlr.github.io/MatrixLED/animations.txt", true);
+  xhttp.open("GET", "https://aarmdlr.github.io/MatrixLED/animations.html", true);
   xhttp.send();
 
 
@@ -393,7 +393,7 @@ function setAnimationAsync(id){
           document.getElementById("tableAnimations").innerHTML = strHTML;
         }
       };
-      xhttp.open("GET", "https://aarmdlr.github.io/MatrixLED/animations.txt", true);
+      xhttp.open("GET", "https://aarmdlr.github.io/MatrixLED/animations.html", true);
       xhttp.send();
 
       var deviceCD = document.getElementById("deviceContentDiv");
