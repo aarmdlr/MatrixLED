@@ -608,15 +608,15 @@ function getListFilesAnimation() {
                     webpage += "<h1 class='h5 mb-0 text-gray-800'>Upload Animation</h1>";
                   webpage += "</div>";
 
-                  webpage += "<form method='post' action='/upload' enctype='multipart/form-data' class='box has-advanced-upload' > ";
+                  //webpage += "<form method='post' action='/upload' enctype='multipart/form-data' class='box has-advanced-upload' > ";
                   webpage += "<table class='table'>";
 
                     webpage += "<tr><td><input type='file' name='fileToUpload' id='fileToUpload' accept='.txt'></td><td>";
-                    webpage += "<button type='submit' class='btn btn-primary' style='float: right;'>Upload</button>";
+                    webpage += "<button class='btn btn-primary' style='float: right;' id='upload-button' >Upload</button>";
                     webpage += "</td></tr>";
 
                   webpage += "</table>";
-                    webpage += "</form>";
+                    //webpage += "</form>";
 
 
 
@@ -691,6 +691,84 @@ getListFilesAnimation();
 (function () {
     document.getElementById("btnAnimationMenu").addEventListener('click', getListFilesAnimation);//attaching click event for button
 })();
+
+
+
+
+
+
+
+
+
+
+document.querySelector('#upload-button').addEventListener('click', function() {
+	// user has not chosen any file
+	if(document.querySelector('#fileToUpload').files.length == 0) {
+		alert('Error : No file selected');
+		return;
+	}
+
+	// first file that was chosen
+	var file = document.querySelector('#fileToUpload').files[0];
+
+	// allowed types
+	var mime_types = [ '.txt' ];
+
+	// validate MIME type
+	if(mime_types.indexOf(file.type) == -1) {
+		alert('Error : Incorrect file type');
+		return;
+	}
+
+	// max 2 MB size allowed
+	if(file.size > 2*1024*1024) {
+		alert('Error : Exceeded size 2MB');
+		return;
+	}
+
+	// validation is successful
+	alert('You have chosen the file ' + file.name);
+
+	// upload file now
+
+
+  var data = new FormData();
+
+  // file selected by the user
+  // in case of multiple files append each of them
+  data.append('file', document.querySelector('#fileToUpload').files[0]);
+
+  var request = new XMLHttpRequest();
+  request.open('post', 'http://matrixled.lan/upload');
+
+  // upload progress event
+  request.upload.addEventListener('progress', function(e) {
+  	var percent_complete = (e.loaded / e.total)*100;
+
+  	// Percentage of upload completed
+  	console.log(percent_complete);
+  });
+
+  // AJAX request finished event
+  request.addEventListener('load', function(e) {
+  	// HTTP status message
+  	console.log(request.status);
+
+  	// request.response will hold the response from the server
+  	console.log(request.response);
+  });
+
+  // send POST request to server side script
+  request.send(data);
+
+});
+
+
+
+
+
+
+
 
 /*function loadAnimations() {
   var xhttp = new XMLHttpRequest();
