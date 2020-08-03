@@ -323,7 +323,7 @@ document.getElementById("imageContentDiv").innerHTML = webpage;
           	var file = document.getElementById('fileToUpload').files[0];
 
           	// allowed types
-          	var mime_types = [ 'text/plain' ];
+          	var mime_types = [ 'image/jpeg' ];
 
           	// validate MIME type
           	if(mime_types.indexOf(file.type) == -1) {
@@ -586,7 +586,7 @@ function getListFiles() {
     	var file = document.getElementById('fileToUpload').files[0];
 
     	// allowed types
-    	var mime_types = [ 'text/plain' ];
+    	var mime_types = [ 'image/jpeg' ];
 
     	// validate MIME type
     	if(mime_types.indexOf(file.type) == -1) {
