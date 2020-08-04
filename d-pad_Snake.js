@@ -107,3 +107,19 @@
         httpRequest.send();
     }
 })();
+
+(function () {
+    var hostNameSTR=document.getElementById("input_deviceNameSTR_H").value;
+    document.getElementById("btnToHome").addEventListener('click', makeRequest);//attaching click event for button
+    function makeRequest() {
+        navigator.vibrate(100);
+        var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
+        httpRequest.open('GET', 'http://'+hostNameSTR+'.lan/snakestop'); // service call
+        httpRequest.send();
+
+        window.setTimeout(function(){
+        // Move to a new location or you can do something else
+          window.location.href = "http://"+hostNameSTR+".lan/";
+        }, 500);
+    }
+})();
