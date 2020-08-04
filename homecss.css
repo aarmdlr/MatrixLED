@@ -29,3 +29,7 @@
 .table td{
   text-transform: capitalize;
 }
+
+.form-text.text-muted.small {
+    text-transform: initial;
+}
