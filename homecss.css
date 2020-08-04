@@ -25,3 +25,7 @@
     overflow: inherit !important;
   }
 }
+
+.table td{
+  text-transform: capitalize;
+}
