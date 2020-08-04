@@ -1,12 +1,13 @@
-
+var hostNameDeviceSTR="ESP_EF41FA.lan"
 function getPageSettingsHTML(){
 
 var ZIPCodeSTR=document.getElementById("input_ZIPCodeSTR_H").value
 var countryCodeSTR=document.getElementById("input_countryCodeSTR_H").value
 var deviceNameSTR=document.getElementById("input_deviceNameSTR_H").value
 
-
-
+if(deviceNameSTR != "" and deviceNameSTR != 0 and deviceNameSTR != "0"){
+  hostNameDeviceSTR=deviceNameSTR+".lan";
+}
 
     var webpage="";
       webpage += "<div class='d-sm-flex align-items-center justify-content-between mb-4'>";
@@ -156,14 +157,14 @@ webpage+="</div>";
     document.getElementById("btnWeather").addEventListener('click', makeRequest);//attaching click event for button
     function makeRequest() {
         var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-        httpRequest.open('GET', 'http://matrixled.lan/weather'); // service call
+        httpRequest.open('GET', 'http://'+hostNameDeviceSTR+'/weather'); // service call
         httpRequest.send();
     }
 })();
 
 function makeRequestWeather() {
     var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-    httpRequest.open('GET', 'http://matrixled.lan/weather'); // service call
+    httpRequest.open('GET', 'http://'+hostNameDeviceSTR+'/weather'); // service call
     httpRequest.send();
 }
 
@@ -171,14 +172,14 @@ function makeRequestWeather() {
     document.getElementById("btnTime").addEventListener('click', makeRequest);//attaching click event for button
     function makeRequest() {
         var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-        httpRequest.open('GET', 'http://matrixled.lan/time'); // service call
+        httpRequest.open('GET', 'http://'+hostNameDeviceSTR+'/time'); // service call
         httpRequest.send();
     }
 })();
 
 function makeRequestTime() {
     var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-    httpRequest.open('GET', 'http://matrixled.lan/time'); // service call
+    httpRequest.open('GET', 'http://'+hostNameDeviceSTR+'/time'); // service call
     httpRequest.send();
 }
 
@@ -238,7 +239,7 @@ window.onload = function() {
 };
 
 function setImageAsync(addr){
-  var address="http://matrixled.lan/"+addr;
+  var address="http://"+hostNameDeviceSTR+"/"+addr;
   var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
   httpRequest.open('GET', address); // service call
   httpRequest.send();
@@ -331,7 +332,7 @@ document.getElementById("imageContentDiv").innerHTML = webpage;
           document.getElementById("tableImages").innerHTML = strHTML;
         }
       };
-      xhttp.open("GET", "http://matrixled.lan/list", true);
+      xhttp.open("GET", "http://"+hostNameDeviceSTR+"/list", true);
       xhttp.send();
 
       var deviceCD = document.getElementById("deviceContentDiv");
@@ -387,7 +388,7 @@ document.getElementById("imageContentDiv").innerHTML = webpage;
             data.append('file', document.getElementById('fileToUpload').files[0]);
 
             var request = new XMLHttpRequest();
-            request.open('post', 'http://matrixled.lan/upload');
+            request.open('post', 'http://'+hostNameDeviceSTR+'/upload');
 
             // upload progress event
             request.upload.addEventListener('progress', function(e) {
@@ -594,7 +595,7 @@ function getListFiles() {
       document.getElementById("tableImages").innerHTML = strHTML;
     }
   };
-  xhttp.open("GET", "http://matrixled.lan/list", true);
+  xhttp.open("GET", "http://"+hostNameDeviceSTR+"/list", true);
   xhttp.send();
 
   var deviceCD = document.getElementById("deviceContentDiv");
@@ -650,7 +651,7 @@ function getListFiles() {
       data.append('file', document.getElementById('fileToUpload').files[0]);
 
       var request = new XMLHttpRequest();
-      request.open('post', 'http://matrixled.lan/upload');
+      request.open('post', 'http://'+hostNameDeviceSTR+'/upload');
 
       // upload progress event
       request.upload.addEventListener('progress', function(e) {
@@ -727,7 +728,7 @@ const http = new easyHTTP();
 function eliminarFichero(file) {
 //alert(file);
 
-http.delete("http://matrixled.lan/delete?file=/"+file, function ( err, response ) {
+http.delete("http://"+hostNameDeviceSTR+"/delete?file=/"+file, function ( err, response ) {
 if (err) {
 	console.log(err);
   Swal.fire({icon: 'error', title: 'Your file could not be deleted',showConfirmButton: false,timer: 2500});
@@ -747,7 +748,7 @@ function sendPostSetAnimation(nameFileAnimation) {
       //document.getElementById("demo").innerHTML = this.responseText;
     }
   };
-  xhttp.open("POST", "http://matrixled.lan/animation", true);
+  xhttp.open("POST", "http://"+hostNameDeviceSTR+"/animation", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("name="+nameFileAnimation+"&delay="+500);
 }
@@ -833,7 +834,7 @@ document.getElementById("animationContentDiv").innerHTML = webpage;
       document.getElementById("tableAnimations").innerHTML = strHTML;
     }
   };
-  xhttp.open("GET", "http://matrixled.lan/list", true);
+  xhttp.open("GET", "http://"+hostNameDeviceSTR+"/list", true);
   xhttp.send();
 
   var deviceCD = document.getElementById("deviceContentDiv");
@@ -889,7 +890,7 @@ document.getElementById("animationContentDiv").innerHTML = webpage;
     data.append('file', document.getElementById('fileToUpload').files[0]);
 
     var request = new XMLHttpRequest();
-    request.open('post', 'http://matrixled.lan/upload');
+    request.open('post', 'http://'+hostNameDeviceSTR+'/upload');
 
     // upload progress event
     request.upload.addEventListener('progress', function(e) {
@@ -925,7 +926,7 @@ document.getElementById("animationContentDiv").innerHTML = webpage;
 function eliminarFicheroAnimation(file) {
 //alert(file);
 
-http.delete("http://matrixled.lan/delete?file=/"+file, function ( err, response ) {
+http.delete("http://"+hostNameDeviceSTR+"/delete?file=/"+file, function ( err, response ) {
 if (err) {
 	console.log(err);
   Swal.fire({icon: 'error', title: 'Your file could not be deleted',showConfirmButton: false,timer: 2500});
@@ -941,191 +942,3 @@ getListFilesAnimation();
 (function () {
     document.getElementById("btnAnimationMenu").addEventListener('click', getListFilesAnimation);//attaching click event for button
 })();
-
-
-
-
-
-
-
-
-/*
-
-document.getElementById('upload-button').addEventListener('click', function() {
-	// user has not chosen any file
-	if(document.getElementById('fileToUpload').files.length == 0) {
-		alert('Error : No file selected');
-		return;
-	}
-
-	// first file that was chosen
-	var file = document.getElementById('fileToUpload').files[0];
-
-	// allowed types
-	var mime_types = [ '.txt' ];
-
-	// validate MIME type
-	if(mime_types.indexOf(file.type) == -1) {
-		alert('Error : Incorrect file type');
-		return;
-	}
-
-	// max 2 MB size allowed
-	if(file.size > 2*1024*1024) {
-		alert('Error : Exceeded size 2MB');
-		return;
-	}
-
-	// validation is successful
-	alert('You have chosen the file ' + file.name);
-
-	// upload file now
-
-
-  var data = new FormData();
-
-  // file selected by the user
-  // in case of multiple files append each of them
-  data.append('file', documentgetElementById('fileToUpload').files[0]);
-
-  var request = new XMLHttpRequest();
-  request.open('post', 'http://matrixled.lan/upload');
-
-  // upload progress event
-  request.upload.addEventListener('progress', function(e) {
-  	var percent_complete = (e.loaded / e.total)*100;
-
-  	// Percentage of upload completed
-  	console.log(percent_complete);
-  });
-
-  // AJAX request finished event
-  request.addEventListener('load', function(e) {
-  	// HTTP status message
-  	console.log(request.status);
-
-  	// request.response will hold the response from the server
-  	console.log(request.response);
-  });
-
-  // send POST request to server side script
-  request.send(data);
-
-});
-
-
-*/
-
-
-
-
-
-/*function loadAnimations() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      alert(this.responseText);
-    }
-  };
-  xhttp.open("GET", "https://aarmdlr.github.io/MatrixLED/animations.html", true);
-  xhttp.send();
-}*/
-
-/*function setAnimationAsync(id){
-  var htmlInputsFormAnimation="";
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-
-            var myArr = JSON.parse(this.responseText);
-            console.log(myArr);
-            //console.log(myArr.Animations[1].frames[0][0][0]);
-            var strDelay=myArr.Animations[id].delay;
-            htmlInputsFormAnimation=htmlInputsFormAnimation+"<input name='delay' type='hidden' value='"+strDelay+"'>";
-
-            //var strNumFrames=myArr.Animations[id].numFrames;
-            //htmlInputsFormAnimation=htmlInputsFormAnimation+"<input name='numFrames' type='hidden' value='"+strNumFrames+"'>";
-
-            for (i in myArr.Animations[id].frames){
-              for (var j = 0; j < 8; j++) {
-                var strFrameLine=myArr.Animations[id].frames[i][j].toString();
-                strFrameLine=strFrameLine+myArr.Animations[id].frames[i][j+1].toString();
-                console.log(strFrameLine);
-                htmlInputsFormAnimation=htmlInputsFormAnimation+"<input name='"+i+j+"' type='hidden' value='"+strFrameLine+"'>";
-              }
-            }
-
-            htmlInputsFormAnimation=htmlInputsFormAnimation+"<button type='submit' id='btnSubmmitSetAnimation' style='display:none'>Enviar</button>";
-            document.getElementById("formAnimations").innerHTML=htmlInputsFormAnimation;
-
-
-
-    }
-  };
-  xhttp.open("GET", "https://aarmdlr.github.io/MatrixLED/animations.html", true);
-  xhttp.send();
-
-
-}
-
-
-
-
-(function () {
-    document.getElementById("btnAnimationMenu").addEventListener('click', getListFilesAnimation);//attaching click event for button
-
-    function getListFilesAnimation() {
-      var arrayFilesAnimations;
-      var arrayFilesFrame;
-      var arrayFilesline;
-      var arrayFilesInfo;
-      var strHTML="";
-
-      var xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-
-                var myArr = JSON.parse(this.responseText);
-                console.log(myArr);
-                console.log(myArr.Animations[1].frames[0][0][0]);
-
-
-
-          for (i in myArr.Animations){
-            alert(myArr.Animations[i].name);
-            strHTML=strHTML+"<tr><td>"+myArr.Animations[i].name+"</td><td><button onclick='setAnimationAsync("+i+")' class='btn btn-primary btnSetImage' >Set Image</button></td></tr>";
-
-          }
-
-
-          document.getElementById("tableAnimations").innerHTML = strHTML;
-        }
-      };
-      xhttp.open("GET", "https://aarmdlr.github.io/MatrixLED/animations.html", true);
-      xhttp.send();
-
-      var deviceCD = document.getElementById("deviceContentDiv");
-      var settingsCD = document.getElementById("settingsContentDiv");
-      var imageCD = document.getElementById("imageContentDiv");
-      var animationCD = document.getElementById("animationContentDiv");
-
-      deviceCD.style.display = "none";
-      settingsCD.style.display = "none";
-      //imageCD.style.display = "none";
-      animationCD.style.display = "block";
-
-
-    }
-})();*/
-
-/*
-function myFunctionJSON(arr) {
-  var out = "";
-  var i;
-  for(i = 0; i < arr.length; i++) {
-    out += '<a href="' + arr[i].url + '">' +
-    arr[i].display + '</a><br>';
-  }
-  document.getElementById("id01").innerHTML = out;
-}
-*/
