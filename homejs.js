@@ -5,7 +5,7 @@ var ZIPCodeSTR=document.getElementById("input_ZIPCodeSTR_H").value
 var countryCodeSTR=document.getElementById("input_countryCodeSTR_H").value
 var deviceNameSTR=document.getElementById("input_deviceNameSTR_H").value
 
-if(deviceNameSTR != "" and deviceNameSTR != 0 and deviceNameSTR != "0"){
+if(deviceNameSTR!="" && deviceNameSTR!=0 && deviceNameSTR!="0"){
   hostNameDeviceSTR=deviceNameSTR+".lan";
 }
 
