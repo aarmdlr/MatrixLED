@@ -339,11 +339,13 @@ document.getElementById("imageContentDiv").innerHTML = webpage;
       var settingsCD = document.getElementById("settingsContentDiv");
       var imageCD = document.getElementById("imageContentDiv");
       var animationCD = document.getElementById("animationContentDiv");
+      var textCD = document.getElementById("textContentDiv");
 
       deviceCD.style.display = "none";
       settingsCD.style.display = "none";
       imageCD.style.display = "block";
       animationCD.style.display = "none";
+      textCD.style.display = "none";
 
 
           document.getElementById('upload-button').addEventListener('click', function() {
@@ -438,11 +440,13 @@ document.getElementById("imageContentDiv").innerHTML = webpage;
       var settingsCD = document.getElementById("settingsContentDiv");
       var imageCD = document.getElementById("imageContentDiv");
       var animationCD = document.getElementById("animationContentDiv");
+      var textCD = document.getElementById("textContentDiv");
 
       deviceCD.style.display = "none";
       settingsCD.style.display = "block";
       imageCD.style.display = "none";
       animationCD.style.display = "none";
+      textCD.style.display = "none";
     }
 })();
 
@@ -454,11 +458,13 @@ document.getElementById("imageContentDiv").innerHTML = webpage;
       var settingsCD = document.getElementById("settingsContentDiv");
       var imageCD = document.getElementById("imageContentDiv");
       var animationCD = document.getElementById("animationContentDiv");
+      var textCD = document.getElementById("textContentDiv");
 
       deviceCD.style.display = "none";
       settingsCD.style.display = "block";
       imageCD.style.display = "none";
       animationCD.style.display = "none";
+      textCD.style.display = "none";
     }
 })();
 
@@ -470,11 +476,13 @@ document.getElementById("imageContentDiv").innerHTML = webpage;
       var settingsCD = document.getElementById("settingsContentDiv");
       var imageCD = document.getElementById("imageContentDiv");
       var animationCD = document.getElementById("animationContentDiv");
+      var textCD = document.getElementById("textContentDiv");
 
       deviceCD.style.display = "none";
       settingsCD.style.display = "block";
       imageCD.style.display = "none";
       animationCD.style.display = "none";
+      textCD.style.display = "none";
     }
 })();
 
@@ -487,11 +495,13 @@ document.getElementById("imageContentDiv").innerHTML = webpage;
       var settingsCD = document.getElementById("settingsContentDiv");
       var imageCD = document.getElementById("imageContentDiv");
       var animationCD = document.getElementById("animationContentDiv");
+      var textCD = document.getElementById("textContentDiv");
 
       deviceCD.style.display = "none";
       settingsCD.style.display = "block";
       imageCD.style.display = "none";
       animationCD.style.display = "none";
+      textCD.style.display = "none";
     }
 })();
 
@@ -504,11 +514,13 @@ document.getElementById("imageContentDiv").innerHTML = webpage;
       var settingsCD = document.getElementById("settingsContentDiv");
       var imageCD = document.getElementById("imageContentDiv");
       var animationCD = document.getElementById("animationContentDiv");
+      var textCD = document.getElementById("textContentDiv");
 
       deviceCD.style.display = "block";
       settingsCD.style.display = "none";
       imageCD.style.display = "none";
       animationCD.style.display = "none";
+      textCD.style.display = "none";
     }
 })();
 
@@ -602,12 +614,13 @@ function getListFiles() {
   var settingsCD = document.getElementById("settingsContentDiv");
   var imageCD = document.getElementById("imageContentDiv");
   var animationCD = document.getElementById("animationContentDiv");
+  var textCD = document.getElementById("textContentDiv");
 
   deviceCD.style.display = "none";
   settingsCD.style.display = "none";
   imageCD.style.display = "block";
   animationCD.style.display = "none";
-
+  textCD.style.display = "none";
 
     document.getElementById('upload-button').addEventListener('click', function() {
     	// user has not chosen any file
@@ -841,11 +854,13 @@ document.getElementById("animationContentDiv").innerHTML = webpage;
   var settingsCD = document.getElementById("settingsContentDiv");
   var imageCD = document.getElementById("imageContentDiv");
   var animationCD = document.getElementById("animationContentDiv");
+  var textCD = document.getElementById("textContentDiv");
 
   deviceCD.style.display = "none";
   settingsCD.style.display = "none";
   imageCD.style.display = "none";
   animationCD.style.display = "block";
+  textCD.style.display = "none";
 
 
   document.getElementById('upload-button').addEventListener('click', function() {
@@ -991,11 +1006,11 @@ function sendPostSetText() {
 
 
 
-function getListFilesAnimation() {
+function getPageText() {
   var webpage="";
 
   webpage += "<div class='d-sm-flex align-items-center justify-content-between mb-4'>";
-      webpage += "<h1 class='h3 mb-0 text-gray-800'>Animation</h1>";
+      webpage += "<h1 class='h3 mb-0 text-gray-800'>Text</h1>";
     webpage += "</div>";
 
     webpage += "<div class='row'>";
@@ -1009,7 +1024,7 @@ function getListFilesAnimation() {
 
 
                     webpage += "<div class='d-sm-flex align-items-center justify-content-between mb-4'>";
-                      webpage += "<h1 class='h5 mb-0 text-gray-800'>Text</h1>";
+                      webpage += "<h1 class='h5 mb-0 text-gray-800'>Set Text</h1>";
                     webpage += "</div>";
 
                   webpage += "<table class='table' id=''>";
@@ -1057,7 +1072,7 @@ document.getElementById("textContentDiv").innerHTML = webpage;
   settingsCD.style.display = "none";
   imageCD.style.display = "none";
   animationCD.style.display = "none";
-  textnCD.style.display = "block";
+  textCD.style.display = "block";
 
 
 
