@@ -1094,9 +1094,9 @@ function getPageText() {
                       webpage += "<tr><td>Position<div class='form-text text-muted small'>";
                       webpage += "Escoge la posición del texto que desea mostrar en la matriz led.</div></td><td>";
                       webpage += "<select class='form-control' name='pos' id='positionTextSelect'>";
-                        webpage += "<option value='0'>Top-Left</option><option value='1'>Top-Center</option></select><option value='2'>Top-Right</option>";
-                        webpage += "<option value='3'>Center-Left</option><option value='4'>Center-Center</option></select><option value='5'>Center-Right</option>";
-                        webpage += "<option value='6'>Bottom-Left</option><option value='7'>Bottom-Center</option></select><option value='8'>Bottom-Right</option>";
+                        webpage += "<option value='0'>Top-Left</option><option value='1'>Top-Center</option><option value='2'>Top-Right</option>";
+                        webpage += "<option value='3'>Center-Left</option><option value='4'>Center-Center</option><option value='5'>Center-Right</option>";
+                        webpage += "<option value='6'>Bottom-Left</option><option value='7'>Bottom-Center</option><option value='8'>Bottom-Right</option>";
                       webpage += "</select>";
                       webpage += "</td></tr>";
 
