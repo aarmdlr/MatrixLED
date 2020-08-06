@@ -993,6 +993,8 @@ function sendPostSetText() {
   colorTextTemp=colorTextTemp.replace("#", "");
   var colorText=parseInt(colorTextTemp, 16);
 
+  alert(textSTR+colorTextTemp+posText+velText);
+
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
