@@ -993,24 +993,16 @@ function sendPostSetText() {
   colorTextTemp=colorTextTemp.replace("#", "");
   var colorText=parseInt(colorTextTemp, 16);
 
-  alert(textSTR+colorTextTemp+posText+velText);
 
-  var data = new FormData();
-  data.append('text', textSTR);
-data.append('color', colorText);
-data.append('pos', posText);
-data.append('vel', velText);
 
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       //document.getElementById("demo").innerHTML = this.responseText;
-      alert("holaaaaaaa");
     }
   };
   xhttp.open("POST", "http://"+hostNameDeviceSTR+"/text", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  //xhttp.send(data);
   xhttp.send("text="+textSTR+"&color="+colorText+"&pos="+posText+"&vel="+velText);
 }
 
@@ -1097,6 +1089,7 @@ function getPageText() {
 
                       webpage += "<tr><td>Color<div class='form-text text-muted small'>";
                       webpage += "Esoge el color del texto que desea mostrar en la matriz led.</div></td><td>";
+                      webpage += "<script src='https://aarmdlr.github.io/MatrixLED/jscolor.js'></script>";
                       webpage += "<button class='form-control' data-jscolor="+'"'+"{preset:'small dark', position:'bottom', valueElement:'#textColorSelected'}"+'"'+"></button><input id='textColorSelected' value='2CAFFE' name='color' type='hidden'>";
 
                       webpage += "</td></tr>";
