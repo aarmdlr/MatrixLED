@@ -995,15 +995,23 @@ function sendPostSetText() {
 
   alert(textSTR+colorTextTemp+posText+velText);
 
+  var data = new FormData();
+  data.append('text', textSTR);
+data.append('color', colorText);
+data.append('pos', posText);
+data.append('vel', velText);
+
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       //document.getElementById("demo").innerHTML = this.responseText;
+      alert("holaaaaaaa");
     }
   };
   xhttp.open("POST", "http://"+hostNameDeviceSTR+"/text", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send("text="+textSTR+"&color="+colorText+"&pos="+posText+"&vel="+velText);
+  xhttp.send(data);
+  //xhttp.send("text="+textSTR+"&color="+colorText+"&pos="+posText+"&vel="+velText);
 }
 
 
