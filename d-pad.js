@@ -8,7 +8,7 @@ document.onkeydown = function(e) {
             break;
         case 38:
               var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-              httpRequest.open('GET', 'http://'+hostNameSTR+'.lan/up'); // service call
+              httpRequest.open('GET', 'http://'+hostNameSTR+'.lan/btna'); // service call
               httpRequest.send();
             break;
         case 39:
