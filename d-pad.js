@@ -1,3 +1,29 @@
+document.onkeydown = function(e) {
+  var hostNameSTR=document.getElementById("input_deviceNameSTR_H").value;
+    switch (e.keyCode) {
+        case 37:
+              var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
+              httpRequest.open('GET', 'http://'+hostNameSTR+'.lan/left'); // service call
+              httpRequest.send();
+            break;
+        case 38:
+              var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
+              httpRequest.open('GET', 'http://'+hostNameSTR+'.lan/up'); // service call
+              httpRequest.send();
+            break;
+        case 39:
+              var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
+              httpRequest.open('GET', 'http://'+hostNameSTR+'.lan/right'); // service call
+              httpRequest.send();
+            break;
+        case 40:
+              var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
+              httpRequest.open('GET', 'http://'+hostNameSTR+'.lan/down'); // service call
+              httpRequest.send();
+            break;
+    }
+};
+
 (function () {
     var hostNameSTR=document.getElementById("input_deviceNameSTR_H").value;
     document.getElementById("btnUP").addEventListener('click', makeRequest);//attaching click event for button
