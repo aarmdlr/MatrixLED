@@ -1010,8 +1010,8 @@ data.append('vel', velText);
   };
   xhttp.open("POST", "http://"+hostNameDeviceSTR+"/text", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send(data);
-  //xhttp.send("text="+textSTR+"&color="+colorText+"&pos="+posText+"&vel="+velText);
+  //xhttp.send(data);
+  xhttp.send("text="+textSTR+"&color="+colorText+"&pos="+posText+"&vel="+velText);
 }
 
 
