@@ -962,24 +962,6 @@ getListFilesAnimation();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function hexToRgb(hex) {
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result ? {
@@ -1047,8 +1029,6 @@ function getPageText() {
                       webpage += "<tr><td>Color<div class='form-text text-muted small'>";
                       webpage += "Esoge el color del texto que desea mostrar en la matriz led.</div></td><td>";
                       webpage += "<input class='form-control' type='color' id='textColorSelected' name='textColorSelected' value='#FFFFFF'>";
-                      //webpage += "<script src='https://aarmdlr.github.io/MatrixLED/jscolor.js'></script>";
-                      //webpage += "<button class='form-control' data-jscolor="+'"'+"{preset:'small dark', position:'bottom', valueElement:'#textColorSelected'}"+'"'+"></button><input id='textColorSelected' value='2CAFFE' name='color' type='hidden'>";
 
                       webpage += "</td></tr>";
 
@@ -1067,11 +1047,6 @@ function getPageText() {
 
                       webpage += "</td></tr>";
                     webpage += "</table>";
-
-
-
-
-
 
 
                     webpage += "<div class='form-group'>";
@@ -1099,10 +1074,6 @@ document.getElementById("textContentDiv").innerHTML = webpage;
   imageCD.style.display = "none";
   animationCD.style.display = "none";
   textCD.style.display = "block";
-
-
-
-
 
 }
 
