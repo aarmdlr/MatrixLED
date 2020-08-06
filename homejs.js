@@ -1007,7 +1007,7 @@ function sendPostSetText() {
 
 
 function getPageText() {
-  var webpage="";
+  /*var webpage="";
 
   webpage += "<div class='d-sm-flex align-items-center justify-content-between mb-4'>";
       webpage += "<h1 class='h3 mb-0 text-gray-800'>Text</h1>";
@@ -1057,7 +1057,72 @@ function getPageText() {
           webpage += "</div>";
         webpage += "</div>";
       webpage += "</div>";
-    webpage += "</div>";
+    webpage += "</div>";*/
+
+    var webpage="";
+      webpage += "<div class='d-sm-flex align-items-center justify-content-between mb-4'>";
+        webpage += "<h1 class='h3 mb-0 text-gray-800'>Text</h1>";
+      webpage += "</div>";
+
+      webpage += "<div class='row'>";
+
+        webpage += "<div class='col-xl-12 col-sm-12 col-xl-12 col-md-12 mb-4'>";
+          webpage += "<div class='card shadow h-100 py-2'>";
+            webpage += "<div class='card-body'>";
+              webpage += "<div class='row no-gutters align-items-center'>";
+                webpage += "<div class='col '>";
+                  webpage += "<div class='col-12' style='padding: 0px;'>";
+
+                      webpage += "<div class='d-sm-flex align-items-center justify-content-between mb-4' id='containerStartupMode'>";
+                        webpage += "<h1 class='h5 mb-0 text-gray-800'>Set Text</h1>";
+                      webpage += "</div>";
+
+                    webpage += "<table class='table'>";
+
+                      webpage += "<tr><td>Text<div class='form-text text-muted small'>";
+                      webpage += "Introduce el texto que desea mostrar en la matriz led. (Max. 200 caracteres)</div></td><td>";
+                      webpage += "<input type='text' name='str' id='strTextToSet' max='200' min='0' placeholder='Text'>";
+
+                      webpage += "</td></tr>";
+
+                      webpage += "<tr><td>Color<div class='form-text text-muted small'>";
+                      webpage += "Esoge el color del texto que desea mostrar en la matriz led.</div></td><td>";
+                      webpage += "<button data-jscolor='{preset:'small dark', position:'bottom', valueElement:'#textColorSelected'}'></button><input id='textColorSelected' value='2CAFFE' name='color' type='hidden'>";
+
+                      webpage += "</td></tr>";
+
+                      webpage += "<tr><td>Position<div class='form-text text-muted small'>";
+                      webpage += "Escoge la posición del texto que desea mostrar en la matriz led.</div></td><td>";
+                      webpage += "<select class='form-control' name='pos' id='positionTextSelect'>";
+                        webpage += "<option value='0'>Top-Left</option><option value='1'>Top-Center</option></select><option value='2'>Top-Right</option>";
+                        webpage += "<option value='3'>Center-Left</option><option value='4'>Center-Center</option></select><option value='5'>Center-Right</option>";
+                        webpage += "<option value='6'>Bottom-Left</option><option value='7'>Bottom-Center</option></select><option value='8'>Bottom-Right</option>";
+                      webpage += "</select>";
+                      webpage += "</td></tr>";
+
+                      webpage += "<tr><td>Velocity<div class='form-text text-muted small'>";
+                      webpage += "Introduce la velocidad de scroll del texto que desea mostrar en la matriz led. (Velocidad en ms.)</div></td><td>";
+                      webpage += "<input type='number' name='vel' id='velTextToSet' max='2000' min='50'>";
+
+                      webpage += "</td></tr>";
+                    webpage += "</table>";
+
+
+
+
+
+
+
+                    webpage += "<div class='form-group'>";
+                      webpage += "<button type='submit' onclick='sendPostSetText()' class='btn btn-primary'>Set Text</button>";
+                    webpage += "</div>";
+                  webpage += "</div>";
+                webpage += "</div>";
+              webpage += "</div>";
+            webpage += "</div>";
+          webpage += "</div>";
+        webpage += "</div>";
+      webpage += "</div>";
 
 document.getElementById("textContentDiv").innerHTML = webpage;
 
