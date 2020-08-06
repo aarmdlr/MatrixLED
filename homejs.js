@@ -1081,13 +1081,13 @@ function getPageText() {
 
                       webpage += "<tr><td>Text<div class='form-text text-muted small'>";
                       webpage += "Introduce el texto que desea mostrar en la matriz led. (Max. 200 caracteres)</div></td><td>";
-                      webpage += "<input type='text' name='str' id='strTextToSet' max='200' min='0' placeholder='Text'>";
+                      webpage += "<input class='form-control' type='text' name='str' id='strTextToSet' max='200' min='0' placeholder='Text'>";
 
                       webpage += "</td></tr>";
 
                       webpage += "<tr><td>Color<div class='form-text text-muted small'>";
                       webpage += "Esoge el color del texto que desea mostrar en la matriz led.</div></td><td>";
-                      webpage += "<button data-jscolor='{preset:'small dark', position:'bottom', valueElement:'#textColorSelected'}'></button><input id='textColorSelected' value='2CAFFE' name='color' type='hidden'>";
+                      webpage += "<button class='form-control' data-jscolor="+'"'+"{preset:'small dark', position:'bottom', valueElement:'#textColorSelected'}"+'"'+"></button><input id='textColorSelected' value='2CAFFE' name='color' type='hidden'>";
 
                       webpage += "</td></tr>";
 
@@ -1102,7 +1102,7 @@ function getPageText() {
 
                       webpage += "<tr><td>Velocity<div class='form-text text-muted small'>";
                       webpage += "Introduce la velocidad de scroll del texto que desea mostrar en la matriz led. (Velocidad en ms.)</div></td><td>";
-                      webpage += "<input type='number' name='vel' id='velTextToSet' max='2000' min='50'>";
+                      webpage += "<input class='form-control' type='number' name='vel' id='velTextToSet' max='2000' min='50'>";
 
                       webpage += "</td></tr>";
                     webpage += "</table>";
