@@ -999,14 +999,6 @@ function sendPostSetText() {
   var posText=document.getElementById("positionTextSelect").value;
   var velText=document.getElementById("velTextToSet").value;
 
-
-  //colorTextTemp=colorTextTemp.replace("#", "");
-  //var colorText=parseInt(colorTextTemp, 16);
-
-  alert(hexToRgb(colorTextTemp).r);
-  alert(hexToRgb(colorTextTemp).g);
-  alert(hexToRgb(colorTextTemp).b);
-
   var colorTextR = hexToRgb(colorTextTemp).r;
   var colorTextG = hexToRgb(colorTextTemp).g;
   var colorTextB = hexToRgb(colorTextTemp).b;
@@ -1025,57 +1017,6 @@ function sendPostSetText() {
 
 
 function getPageText() {
-  /*var webpage="";
-
-  webpage += "<div class='d-sm-flex align-items-center justify-content-between mb-4'>";
-      webpage += "<h1 class='h3 mb-0 text-gray-800'>Text</h1>";
-    webpage += "</div>";
-
-    webpage += "<div class='row'>";
-
-      webpage += "<div class='col-xl-12 col-sm-12 col-xl-12 col-md-12 mb-4'>";
-        webpage += "<div class='card shadow h-100 py-2'>";
-          webpage += "<div class='card-body'>";
-            webpage += "<div class='row no-gutters align-items-center'>";
-              webpage += "<div class='col '>";
-                webpage += "<div class='col-12' style='padding: 0px;'>";
-
-
-                    webpage += "<div class='d-sm-flex align-items-center justify-content-between mb-4'>";
-                      webpage += "<h1 class='h5 mb-0 text-gray-800'>Set Text</h1>";
-                    webpage += "</div>";
-
-                  webpage += "<table class='table' id=''>";
-                    webpage += "<tr><td><input type='text' name='str' id='strTextToSet' max='200' min='0' placeholder='Text to print on LED Matrix'></td>";
-                    webpage += "<td>Pick a color:<button data-jscolor='{preset:'small dark', position:'bottom', valueElement:'#textColorSelected'}'></button><input id='textColorSelected' value='2CAFFE' name='color' type='hidden'></td>";
-                    webpage += "</tr><tr>";
-                    webpage += "<td><label for='pos'>Choose a text position:</label><select name='pos' id='positionTextSelect'><option value='0'>Top-Left</option>";
-                    webpage += "<option value='1'>Top-Center</option><option value='2'>Top-Right</option>";
-                    webpage += "<option value='3'>Center-Left</option><option value='4'>Center-Center</option></select><option value='5'>Center-Right</option>";
-                    webpage += "<option value='6'>Bottom-Left</option><option value='7'>Bottom-Center</option></select><option value='8'>Bottom-Right</option></select></td>";
-                    webpage += "</tr><tr>";
-                    webpage += "<td><input type='number' name='vel' id='velTextToSet' max='2000' min='50' placeholder='Speed of scrollable text in ms'></td>";
-                    webpage += "</tr><tr>";
-                    webpage += "<td><button type='submmit' onclick='sendPostSetText()' class='btn btn-primary' style='float: right;' >Set Text</button>";
-                    webpage += "</td></tr>";
-
-                  webpage += "</table>";
-
-
-
-
-
-
-
-
-
-                webpage += "</div>";
-              webpage += "</div>";
-            webpage += "</div>";
-          webpage += "</div>";
-        webpage += "</div>";
-      webpage += "</div>";
-    webpage += "</div>";*/
 
     var webpage="";
       webpage += "<div class='d-sm-flex align-items-center justify-content-between mb-4'>";
