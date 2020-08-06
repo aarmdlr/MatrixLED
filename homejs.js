@@ -980,6 +980,15 @@ getListFilesAnimation();
 
 
 
+function hexToRgb(hex) {
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
+}
+
 
 
 
@@ -990,15 +999,17 @@ function sendPostSetText() {
   var posText=document.getElementById("positionTextSelect").value;
   var velText=document.getElementById("velTextToSet").value;
 
-  alert(colorTextTemp);
 
-  colorTextTemp=colorTextTemp.replace("#", "");
-  var colorText=parseInt(colorTextTemp, 16);
+  //colorTextTemp=colorTextTemp.replace("#", "");
+  //var colorText=parseInt(colorTextTemp, 16);
 
-alert(colorTextTemp);
+  alert(hexToRgb(colorTextTemp).r);
+  alert(hexToRgb(colorTextTemp).g);
+  alert(hexToRgb(colorTextTemp).b);
 
-alert(colorText);
-
+  var colorTextR = hexToRgb(colorTextTemp).r;
+  var colorTextG = hexToRgb(colorTextTemp).g;
+  var colorTextB = hexToRgb(colorTextTemp).b;
 
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -1008,7 +1019,7 @@ alert(colorText);
   };
   xhttp.open("POST", "http://"+hostNameDeviceSTR+"/text", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.send("text="+textSTR+"&color="+colorText+"&pos="+posText+"&vel="+velText);
+  xhttp.send("text="+textSTR+"&colorR="+colorTextR+"&colorG="+colorTextG+"&colorB="+colorTextB+"&pos="+posText+"&vel="+velText);
 }
 
 
