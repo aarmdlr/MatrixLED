@@ -1089,8 +1089,9 @@ function getPageText() {
 
                       webpage += "<tr><td>Color<div class='form-text text-muted small'>";
                       webpage += "Esoge el color del texto que desea mostrar en la matriz led.</div></td><td>";
-                      webpage += "<script src='https://aarmdlr.github.io/MatrixLED/jscolor.js'></script>";
-                      webpage += "<button class='form-control' data-jscolor="+'"'+"{preset:'small dark', position:'bottom', valueElement:'#textColorSelected'}"+'"'+"></button><input id='textColorSelected' value='2CAFFE' name='color' type='hidden'>";
+                      webpage += "<input class='form-control' type='color' id='textColorSelected' name='textColorSelected' value='#ff0000'>";
+                      //webpage += "<script src='https://aarmdlr.github.io/MatrixLED/jscolor.js'></script>";
+                      //webpage += "<button class='form-control' data-jscolor="+'"'+"{preset:'small dark', position:'bottom', valueElement:'#textColorSelected'}"+'"'+"></button><input id='textColorSelected' value='2CAFFE' name='color' type='hidden'>";
 
                       webpage += "</td></tr>";
 
