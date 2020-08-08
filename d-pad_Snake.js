@@ -1,5 +1,6 @@
 document.onkeydown = function(e) {
-  var hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
+  //var hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
+var hostIP_STR=location.host;
     switch (e.keyCode) {
         case 37:
               var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
@@ -24,8 +25,11 @@ document.onkeydown = function(e) {
     }
 };
 
+
+
 (function () {
-    var hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
+    //var hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
+var hostIP_STR=location.host;
     document.getElementById("btnUP").addEventListener('click', makeRequest);//attaching click event for button
     function makeRequest() {
       navigator.vibrate(100);
@@ -36,7 +40,8 @@ document.onkeydown = function(e) {
 })();
 
 (function () {
-    var hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
+    //var hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
+var hostIP_STR=location.host;
     document.getElementById("btnDOWN").addEventListener('click', makeRequest);//attaching click event for button
     function makeRequest() {
       navigator.vibrate(100);
@@ -47,7 +52,8 @@ document.onkeydown = function(e) {
 })();
 
 (function () {
-    var hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
+    //var hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
+var hostIP_STR=location.host;
     document.getElementById("btnLEFT").addEventListener('click', makeRequest);//attaching click event for button
     function makeRequest() {
       navigator.vibrate(100);
@@ -58,7 +64,8 @@ document.onkeydown = function(e) {
 })();
 
 (function () {
-    var hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
+    //var hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
+var hostIP_STR=location.host;
     document.getElementById("btnRIGHT").addEventListener('click', makeRequest);//attaching click event for button
     function makeRequest() {
       navigator.vibrate(100);
@@ -69,7 +76,8 @@ document.onkeydown = function(e) {
 })();
 
 (function () {
-    var hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
+    //var hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
+var hostIP_STR=location.host;
     document.getElementById("btnA").addEventListener('click', makeRequest);//attaching click event for button
     function makeRequest() {
       navigator.vibrate(100);
@@ -80,7 +88,8 @@ document.onkeydown = function(e) {
 })();
 
 (function () {
-    var hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
+    //var hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
+var hostIP_STR=location.host;
     document.getElementById("btnB").addEventListener('click', makeRequest);//attaching click event for button
     function makeRequest() {
       navigator.vibrate(100);
@@ -91,7 +100,8 @@ document.onkeydown = function(e) {
 })();
 
 (function () {
-    var hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
+    //var hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
+var hostIP_STR=location.host;
     document.getElementById("btnX").addEventListener('click', makeRequest);//attaching click event for button
     function makeRequest() {
       navigator.vibrate(100);
@@ -102,7 +112,8 @@ document.onkeydown = function(e) {
 })();
 
 (function () {
-    var hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
+    //var hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
+var hostIP_STR=location.host;
     document.getElementById("btnY").addEventListener('click', makeRequest);//attaching click event for button
     function makeRequest() {
       navigator.vibrate(100);
@@ -113,7 +124,8 @@ document.onkeydown = function(e) {
 })();
 
 (function () {
-    var hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
+    //var hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
+var hostIP_STR=location.host;
     document.getElementById("btnSTART").addEventListener('click', makeRequest);//attaching click event for button
     function makeRequest() {
       navigator.vibrate(100);
@@ -124,7 +136,8 @@ document.onkeydown = function(e) {
 })();
 
 (function () {
-    var hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
+    //var hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
+var hostIP_STR=location.host;
     document.getElementById("btnSELECT").addEventListener('click', makeRequest);//attaching click event for button
     function makeRequest() {
         navigator.vibrate(100);
@@ -135,7 +148,8 @@ document.onkeydown = function(e) {
 })();
 
 (function () {
-    var hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
+    //var hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
+var hostIP_STR=location.host;
     document.getElementById("btnToHome").addEventListener('click', makeRequest);//attaching click event for button
     function makeRequest() {
         navigator.vibrate(100);
