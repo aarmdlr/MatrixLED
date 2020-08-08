@@ -1,9 +1,12 @@
 var hostNameDeviceSTR="ESP_EF41FA.lan"
+var hostIP_STR;
 function getPageSettingsHTML(){
 
 var ZIPCodeSTR=document.getElementById("input_ZIPCodeSTR_H").value
 var countryCodeSTR=document.getElementById("input_countryCodeSTR_H").value
 var deviceNameSTR=document.getElementById("input_deviceNameSTR_H").value
+
+hostIP_STR=document.getElementById("input_deviceIP_STR_H").value;
 
 if(deviceNameSTR!="" && deviceNameSTR!=0 && deviceNameSTR!="0"){
   hostNameDeviceSTR=deviceNameSTR+".lan";
@@ -157,14 +160,14 @@ webpage+="</div>";
     document.getElementById("btnWeather").addEventListener('click', makeRequest);//attaching click event for button
     function makeRequest() {
         var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-        httpRequest.open('GET', 'http://'+hostNameDeviceSTR+'/weather'); // service call
+        httpRequest.open('GET', 'http://'+hostIP_STR+'/weather'); // service call
         httpRequest.send();
     }
 })();
 
 function makeRequestWeather() {
     var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-    httpRequest.open('GET', 'http://'+hostNameDeviceSTR+'/weather'); // service call
+    httpRequest.open('GET', 'http://'+hostIP_STR+'/weather'); // service call
     httpRequest.send();
 }
 
@@ -172,14 +175,14 @@ function makeRequestWeather() {
     document.getElementById("btnTime").addEventListener('click', makeRequest);//attaching click event for button
     function makeRequest() {
         var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-        httpRequest.open('GET', 'http://'+hostNameDeviceSTR+'/time'); // service call
+        httpRequest.open('GET', 'http://'+hostIP_STR+'/time'); // service call
         httpRequest.send();
     }
 })();
 
 function makeRequestTime() {
     var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-    httpRequest.open('GET', 'http://'+hostNameDeviceSTR+'/time'); // service call
+    httpRequest.open('GET', 'http://'+hostIP_STR+'/time'); // service call
     httpRequest.send();
 }
 
@@ -239,7 +242,7 @@ window.onload = function() {
 };
 
 function setImageAsync(addr){
-  var address="http://"+hostNameDeviceSTR+"/"+addr;
+  var address="http://"+hostIP_STR+"/"+addr;
   var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
   httpRequest.open('GET', address); // service call
   httpRequest.send();
@@ -332,7 +335,7 @@ document.getElementById("imageContentDiv").innerHTML = webpage;
           document.getElementById("tableImages").innerHTML = strHTML;
         }
       };
-      xhttp.open("GET", "http://"+hostNameDeviceSTR+"/list", true);
+      xhttp.open("GET", "http://"+hostIP_STR+"/list", true);
       xhttp.send();
 
       var deviceCD = document.getElementById("deviceContentDiv");
@@ -390,7 +393,7 @@ document.getElementById("imageContentDiv").innerHTML = webpage;
             data.append('file', document.getElementById('fileToUpload').files[0]);
 
             var request = new XMLHttpRequest();
-            request.open('post', 'http://'+hostNameDeviceSTR+'/upload');
+            request.open('post', 'http://'+hostIP_STR+'/upload');
 
             // upload progress event
             request.upload.addEventListener('progress', function(e) {
@@ -607,7 +610,7 @@ function getListFiles() {
       document.getElementById("tableImages").innerHTML = strHTML;
     }
   };
-  xhttp.open("GET", "http://"+hostNameDeviceSTR+"/list", true);
+  xhttp.open("GET", "http://"+hostIP_STR+"/list", true);
   xhttp.send();
 
   var deviceCD = document.getElementById("deviceContentDiv");
@@ -664,7 +667,7 @@ function getListFiles() {
       data.append('file', document.getElementById('fileToUpload').files[0]);
 
       var request = new XMLHttpRequest();
-      request.open('post', 'http://'+hostNameDeviceSTR+'/upload');
+      request.open('post', 'http://'+hostIP_STR+'/upload');
 
       // upload progress event
       request.upload.addEventListener('progress', function(e) {
@@ -741,7 +744,7 @@ const http = new easyHTTP();
 function eliminarFichero(file) {
 //alert(file);
 
-http.delete("http://"+hostNameDeviceSTR+"/delete?file=/"+file, function ( err, response ) {
+http.delete("http://"+hostIP_STR+"/delete?file=/"+file, function ( err, response ) {
 if (err) {
 	console.log(err);
   Swal.fire({icon: 'error', title: 'Your file could not be deleted',showConfirmButton: false,timer: 2500});
@@ -761,7 +764,7 @@ function sendPostSetAnimation(nameFileAnimation) {
       //document.getElementById("demo").innerHTML = this.responseText;
     }
   };
-  xhttp.open("POST", "http://"+hostNameDeviceSTR+"/animation", true);
+  xhttp.open("POST", "http://"+hostIP_STR+"/animation", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("name="+nameFileAnimation+"&delay="+500);
 }
@@ -847,7 +850,7 @@ document.getElementById("animationContentDiv").innerHTML = webpage;
       document.getElementById("tableAnimations").innerHTML = strHTML;
     }
   };
-  xhttp.open("GET", "http://"+hostNameDeviceSTR+"/list", true);
+  xhttp.open("GET", "http://"+hostIP_STR+"/list", true);
   xhttp.send();
 
   var deviceCD = document.getElementById("deviceContentDiv");
@@ -905,7 +908,7 @@ document.getElementById("animationContentDiv").innerHTML = webpage;
     data.append('file', document.getElementById('fileToUpload').files[0]);
 
     var request = new XMLHttpRequest();
-    request.open('post', 'http://'+hostNameDeviceSTR+'/upload');
+    request.open('post', 'http://'+hostIP_STR+'/upload');
 
     // upload progress event
     request.upload.addEventListener('progress', function(e) {
@@ -941,7 +944,7 @@ document.getElementById("animationContentDiv").innerHTML = webpage;
 function eliminarFicheroAnimation(file) {
 //alert(file);
 
-http.delete("http://"+hostNameDeviceSTR+"/delete?file=/"+file, function ( err, response ) {
+http.delete("http://"+hostIP_STR+"/delete?file=/"+file, function ( err, response ) {
 if (err) {
 	console.log(err);
   Swal.fire({icon: 'error', title: 'Your file could not be deleted',showConfirmButton: false,timer: 2500});
@@ -991,7 +994,7 @@ function sendPostSetText() {
       //document.getElementById("demo").innerHTML = this.responseText;
     }
   };
-  xhttp.open("POST", "http://"+hostNameDeviceSTR+"/text", true);
+  xhttp.open("POST", "http://"+hostIP_STR+"/text", true);
   xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhttp.send("text="+textSTR+"&colorR="+colorTextR+"&colorG="+colorTextG+"&colorB="+colorTextB+"&pos="+posText+"&vel="+velText);
 }
