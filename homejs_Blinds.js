@@ -101,7 +101,7 @@ webpage += "<div id='wrapper'>";
     webpage += "<div id='content-wrapper' class='d-flex flex-column'>";
       webpage += "<div id='content'>";
         webpage += "<nav class='navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow' style='height: 45px;'>";
-          webpage += "<button id='sidebarToggleTop' class='btn btn-link d-md-none rounded-circle mr-3'><i class='fa fa-bars'></i></button>";
+          webpage += "<button id='sidebarToggleTop' onclick='showhide_MenuSmartphone();' class='btn btn-link d-md-none rounded-circle mr-3'><i class='fa fa-bars'></i></button>";
         webpage += "</nav>";
         webpage += "<div class='container-fluid' id='containerHome'>";
           webpage += "<div class='d-sm-flex align-items-center justify-content-between mb-4'>";
@@ -739,6 +739,17 @@ function sendRANGE_async_update(identifier){
     };
     httpRequest.send(null);
   }
+}
+
+function showhide_MenuSmartphone(){
+  if(document.getElementById("accordionSidebar").style.display != "none") {
+    console.log("Visible -> Oculto");
+    document.getElementById("accordionSidebar").style.display = "none"
+  }else if(document.getElementById("accordionSidebar").style.display == "none") {
+    console.log("Oculto -> Visible");
+    document.getElementById("accordionSidebar").style.display = "block"
+  }
+
 }
 
 /*
