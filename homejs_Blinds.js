@@ -53,7 +53,7 @@ function homeHTML(){
 
 var webpage="";
 
-webpage += "<a class='scroll-to-top rounded' href='#page-top' style='display: none; z-index: 1000;'><i class='fas fa-angle-up' style='margin-top: 14px;'></i></a>";
+/*webpage += "<a class='scroll-to-top rounded' href='#page-top' style='display: none; z-index: 1000;'><i class='fas fa-angle-up' style='margin-top: 14px;'></i></a>";
 webpage += "<script src='https://cdn.jsdelivr.net/npm/startbootstrap-sb-admin-2@4.1.1/vendor/jquery/jquery.min.js'></script>";
 webpage += "<script src='https://cdn.jsdelivr.net/npm/startbootstrap-sb-admin-2@4.1.1/vendor/bootstrap/js/bootstrap.bundle.min.js'></script>";
 webpage += "<script src='https://cdn.jsdelivr.net/npm/startbootstrap-sb-admin-2@4.1.1/vendor/jquery-easing/jquery.easing.min.js'></script>";
@@ -69,7 +69,9 @@ webpage += "$(document).on('input', '#customRange3L', function() {location.href=
 webpage += "$(document).on('input', '#customRange3C', function() {location.href='/set?pos='+$(this).val();});";
 webpage += "$(document).on('input', '#customRange3R', function() {alert('aa'); location.href='/setR?pos='+$(this).val();});";
 webpage += "$('#sidebarToggleTop').click(function() {$('#accordionSidebar').toggle();});});";
-webpage += "</script>";
+webpage += "</script>";*/
+
+webpage += "<a class='scroll-to-top rounded' href='#page-top' style='display: none; z-index: 1000;'><i class='fas fa-angle-up' style='margin-top: 14px;'></i></a>";
 
 webpage += "<div id='wrapper'>";
 
