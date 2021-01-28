@@ -689,10 +689,10 @@ function sendBTN_async_update(addr){
   httpRequest.onreadystatechange = function (aEvt) {
     if (httpRequest.readyState == 4) {
        if(httpRequest.status == 200)
-        dump(httpRequest.responseText);
+        console.log(httpRequest.responseText);
        else
-        dump(httpRequest.responseText);
-        dump("Error loading page\n");
+        console.log(httpRequest.responseText);
+        console.log("Error loading page\n");
     }
   };
   httpRequest.send(null);
