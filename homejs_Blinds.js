@@ -123,7 +123,7 @@ webpage += "<div id='wrapper'>";
                       webpage += "<div id='divSliderRange' class='card-body mx-auto'>";
                         webpage += "<p class='text-left col-6 text-xs' style='float: left; padding: 0px;'>Close</p>";
                         webpage += "<p class='text-right col-6 text-xs' style='float: right; padding: 0px;'>Open</p>";
-                        webpage += "<input type='range' class='custom-range' min='0' max='100' step='10' id='customRange3L' style='margin-top: -15px;' value='"+STR_PER_STEPPER_TARGET_L+"'>";
+                        webpage += "<input type='range' class='custom-range' min='0' max='100' step='10' id='customRange3L' onchange='"+'sendRANGE_async_update("customRange3L")'+"' style='margin-top: -15px;' value='"+STR_PER_STEPPER_TARGET_L+"'>";
                       webpage += "</div>";
                     webpage += "</div>";
                   webpage += "</div>";
@@ -145,7 +145,7 @@ webpage += "<div id='wrapper'>";
                       webpage += "<div id='divSliderRange' class='card-body mx-auto'>";
                         webpage += "<p class='text-left col-6 text-xs' style='float: left; padding: 0px;'>Close</p>";
                         webpage += "<p class='text-right col-6 text-xs' style='float: right; padding: 0px;'>Open</p>";
-                        webpage += "<input type='range' class='custom-range' min='0' max='100' step='10' id='customRange3C' style='margin-top: -15px;' value='"+STR_PER_STEPPER_TARGET+"'>";
+                        webpage += "<input type='range' class='custom-range' min='0' max='100' step='10' id='customRange3C' onchange='"+'sendRANGE_async_update("customRange3C")'+"' style='margin-top: -15px;' value='"+STR_PER_STEPPER_TARGET+"'>";
                       webpage += "</div>";
                     webpage += "</div>";
                   webpage += "</div>";
@@ -167,7 +167,7 @@ webpage += "<div id='wrapper'>";
                         webpage += "<div id='divSliderRange' class='card-body mx-auto'>";
                           webpage += "<p class='text-left col-6 text-xs' style='float: left; padding: 0px;'>Close</p>";
                           webpage += "<p class='text-right col-6 text-xs' style='float: right; padding: 0px;'>Open</p>";
-                          webpage += "<input type='range' class='custom-range' min='0' max='100' step='10' id='customRange3R' style='margin-top: -15px;' value='"+STR_PER_STEPPER_TARGET_R+"'>";
+                          webpage += "<input type='range' class='custom-range' min='0' max='100' step='10' id='customRange3R' onchange='"+'sendRANGE_async_update("customRange3R")'+"' style='margin-top: -15px;' value='"+STR_PER_STEPPER_TARGET_R+"'>";
                         webpage += "</div>";
                       webpage += "</div>";
                     webpage += "</div>";
@@ -704,6 +704,44 @@ function sendBTN_async_update(addr){
   httpRequest.send(null);
 }
 
+
+function sendRANGE_async_update(identifier){
+  var addrTempPos="";
+  if(identifier=="customRange3L"){
+    addrTempPos='setL?pos='+document.getElementById(identifier).value;
+  }else if(identifier=="customRange3C"){
+    addrTempPos='set?pos='+document.getElementById(identifier).value;
+  }else if(identifier=="customRange3R"){
+    addrTempPos='setR?pos='+document.getElementById(identifier).value;
+  }
+
+  if (addrTempPos!=""){
+    var address="http://"+hostIP_STR+"/"+addrTempPos;
+    var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
+    httpRequest.open('GET', address, true); // service call
+
+    httpRequest.onreadystatechange = function (aEvt) {
+      if (httpRequest.readyState == 4) {
+         if(httpRequest.status == 302){
+          //console.log(httpRequest.responseText);
+          var resultPerRangeGetted=httpRequest.responseText.split(",");
+
+          STR_PER_STEPPER_TARGET_L = resultPerRangeGetted[0];
+          STR_PER_STEPPER_TARGET = resultPerRangeGetted[1];
+          STR_PER_STEPPER_TARGET_R = resultPerRangeGetted[2];
+
+          document.getElementById("customRange3L").value = STR_PER_STEPPER_TARGET_L;
+          document.getElementById("customRange3C").value = STR_PER_STEPPER_TARGET;
+          document.getElementById("customRange3R").value = STR_PER_STEPPER_TARGET_R;
+
+        }else{
+          console.log("Error loading page\n");
+        }
+      }
+    };
+    httpRequest.send(null);
+  }
+}
 
 /*
 function setImageAsync(addr){
