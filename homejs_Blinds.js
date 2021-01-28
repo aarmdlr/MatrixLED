@@ -678,11 +678,13 @@ window.onload = function() {
 function sendBTN_async_update(addr){
   var address="http://"+hostIP_STR+"/"+addr;
   var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-  httpRequest.open('GET', address); // service call
+  httpRequest.open('GET', address, true); // service call
   httpRequest.send();
+  dump(httpRequest.responseText);
   alert(httpRequest.responseText);
-  if (httpRequest.status!=200){
+  if (httpRequest.status==302){
     alert(httpRequest.responseText);
+    dump(httpRequest.responseText);
   }
 }
 
