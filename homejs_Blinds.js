@@ -209,8 +209,8 @@ webpage += "<div id='wrapper'>";
                 webpage += "<br>";
                 webpage += "<div class='btn-group pb-6 col-12 text-xs' role='group'>";
 
-                  webpage += "<a class='btn btn-primary text-xs' style='line-height: 24px;' id='btn_set_topL-H'>SET TOP</a>";
-                  webpage += "<a class='btn btn-primary text-xs' style='line-height: 24px;' id='btn_set_bottomL-H'>SET BOTTOM</a>";
+                  webpage += "<a class='btn btn-primary text-xs' style='line-height: 24px;' onclick='"+'sendBTN_async_update("set_topL")'+"' id='btn_set_topL-H'>SET TOP</a>";
+                  webpage += "<a class='btn btn-primary text-xs' style='line-height: 24px;' onclick='"+'sendBTN_async_update("set_bottomL")'+"' id='btn_set_bottomL-H'>SET BOTTOM</a>";
                 webpage += "</div>";
               webpage += "</div>";
             webpage += "</div>";
@@ -328,16 +328,16 @@ webpage += "<div id='wrapper'>";
                 webpage += "<div class='text-xs font-weight-bold text-uppercase mb-1 text-center'>Cortina Central</div>";
                 webpage += "<br>";
                 webpage += "<div class='card-body mx-auto col-6'>";
-                  webpage += "<a class='btn btn-primary btn-block' href='/up'><i class='fas fa-chevron-up'></i></a>";
-                  webpage += "<a class='btn btn-primary btn-block' href='/stop'><i class='fas fa-minus'></i></a>";
-                  webpage += "<a class='btn btn-primary btn-block' href='/down'><i class='fas fa-chevron-down'></i></a>";
+                  webpage += "<a class='btn btn-primary btn-block' onclick='"+'sendBTN_async_update("up")'+"'><i class='fas fa-chevron-up'></i></a>";
+                  webpage += "<a class='btn btn-primary btn-block' onclick='"+'sendBTN_async_update("stop")'+"'><i class='fas fa-minus'></i></a>";
+                  webpage += "<a class='btn btn-primary btn-block' onclick='"+'sendBTN_async_update("down")'+"'><i class='fas fa-chevron-down'></i></a>";
                 webpage += "</div>";
                 webpage += "<br>";
                 webpage += "<div class='btn-group pb-6 col-12 text-xs' role='group'>";
 
-                  webpage += "<a class='btn btn-primary text-xs' style='line-height: 24px;' href='/set_top'>SET TOP</a>";
+                  webpage += "<a class='btn btn-primary text-xs' style='line-height: 24px;' onclick='"+'sendBTN_async_update("set_top")'+"'>SET TOP</a>";
 
-                  webpage += "<a class='btn btn-primary text-xs' style='line-height: 24px;' href='/set_bottom'>SET BOTTOM</a>";
+                  webpage += "<a class='btn btn-primary text-xs' style='line-height: 24px;' onclick='"+'sendBTN_async_update("set_bottom")'+"'>SET BOTTOM</a>";
                 webpage += "</div>";
               webpage += "</div>";
             webpage += "</div>";
@@ -445,16 +445,16 @@ webpage += "<div id='wrapper'>";
                       webpage += "<div class='text-xs font-weight-bold text-uppercase mb-1 text-center'>Cortina Derecha</div>";
                       webpage += "<br>";
                       webpage += "<div class='card-body mx-auto col-6'>";
-                        webpage += "<a class='btn btn-primary btn-block' href='/upR'><i class='fas fa-chevron-up'></i></a>";
-                        webpage += "<a class='btn btn-primary btn-block' href='/stopR'><i class='fas fa-minus'></i></a>";
-                        webpage += "<a class='btn btn-primary btn-block' href='/downR'><i class='fas fa-chevron-down'></i></a>";
+                        webpage += "<a class='btn btn-primary btn-block' onclick='"+'sendBTN_async_update("upR")'+"'><i class='fas fa-chevron-up'></i></a>";
+                        webpage += "<a class='btn btn-primary btn-block' onclick='"+'sendBTN_async_update("stopR")'+"'><i class='fas fa-minus'></i></a>";
+                        webpage += "<a class='btn btn-primary btn-block' onclick='"+'sendBTN_async_update("downR")'+"'><i class='fas fa-chevron-down'></i></a>";
                       webpage += "</div>";
                       webpage += "<br>";
                       webpage += "<div class='btn-group pb-6 col-12 text-xs' role='group'>";
 
-                        webpage += "<a class='btn btn-primary text-xs' style='line-height: 24px;' href='/set_topR'>SET TOP</a>";
+                        webpage += "<a class='btn btn-primary text-xs' style='line-height: 24px;' onclick='"+'sendBTN_async_update("set_topR")'+"'>SET TOP</a>";
 
-                        webpage += "<a class='btn btn-primary text-xs' style='line-height: 24px;' href='/set_bottomR'>SET BOTTOM</a>";
+                        webpage += "<a class='btn btn-primary text-xs' style='line-height: 24px;' onclick='"+'sendBTN_async_update("set_bottomR")'+"'>SET BOTTOM</a>";
                       webpage += "</div>";
                     webpage += "</div>";
                   webpage += "</div>";
