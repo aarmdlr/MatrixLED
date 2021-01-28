@@ -679,13 +679,23 @@ function sendBTN_async_update(addr){
   var address="http://"+hostIP_STR+"/"+addr;
   var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
   httpRequest.open('GET', address, true); // service call
-  httpRequest.send();
+  /*httpRequest.send();
   dump(httpRequest.responseText);
   alert(httpRequest.responseText);
   if (httpRequest.status==302){
     alert(httpRequest.responseText);
     dump(httpRequest.responseText);
-  }
+  }*/
+  httpRequest.onreadystatechange = function (aEvt) {
+    if (httpRequest.readyState == 4) {
+       if(httpRequest.status == 200)
+        dump(httpRequest.responseText);
+       else
+        dump(httpRequest.responseText);
+        dump("Error loading page\n");
+    }
+  };
+  httpRequest.send(null);
 }
 
 
