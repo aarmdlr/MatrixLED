@@ -200,15 +200,15 @@ webpage += "<div id='wrapper'>";
                 webpage += "<div class='text-xs font-weight-bold text-uppercase mb-1 text-center'>Cortina Izquierda</div>";
                 webpage += "<br>";
                 webpage += "<div class='card-body mx-auto col-6'>";
-                  webpage += "<a class='btn btn-primary btn-block' href='/upL'><i class='fas fa-chevron-up'></i></a>";
-                  webpage += "<a class='btn btn-primary btn-block' href='/stopL'><i class='fas fa-minus'></i></a>";
-                  webpage += "<a class='btn btn-primary btn-block' href='/downL'><i class='fas fa-chevron-down'></i></a>";
+                  webpage += "<a class='btn btn-primary btn-block' id='btn_upL-H'><i class='fas fa-chevron-up'></i></a>";
+                  webpage += "<a class='btn btn-primary btn-block' id='btn_stopL-H'><i class='fas fa-minus'></i></a>";
+                  webpage += "<a class='btn btn-primary btn-block' id='btn_downL-H'><i class='fas fa-chevron-down'></i></a>";
                 webpage += "</div>";
                 webpage += "<br>";
                 webpage += "<div class='btn-group pb-6 col-12 text-xs' role='group'>";
 
-                  webpage += "<a class='btn btn-primary text-xs' style='line-height: 24px;' href='/set_topL'>SET TOP</a>";
-                  webpage += "<a class='btn btn-primary text-xs' style='line-height: 24px;' href='/set_bottomL'>SET BOTTOM</a>";
+                  webpage += "<a class='btn btn-primary text-xs' style='line-height: 24px;' id='btn_set_topL-H'>SET TOP</a>";
+                  webpage += "<a class='btn btn-primary text-xs' style='line-height: 24px;' id='btn_set_bottomL-H'>SET BOTTOM</a>";
                 webpage += "</div>";
               webpage += "</div>";
             webpage += "</div>";
@@ -551,17 +551,53 @@ webpage += "<div id='wrapper'>";
 
 
 
-/*
+
 
 (function () {
-    document.getElementById("btnWeather").addEventListener('click', makeRequest);//attaching click event for button
+    document.getElementById("btn_upL-H").addEventListener('click', makeRequest);//attaching click event for button
     function makeRequest() {
         var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-        httpRequest.open('GET', 'http://'+hostIP_STR+'/weather'); // service call
+        httpRequest.open('GET', 'http://'+hostIP_STR+'/upL'); // service call
         httpRequest.send();
     }
 })();
 
+(function () {
+    document.getElementById("btn_stopL-H").addEventListener('click', makeRequest);//attaching click event for button
+    function makeRequest() {
+        var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
+        httpRequest.open('GET', 'http://'+hostIP_STR+'/stopL'); // service call
+        httpRequest.send();
+    }
+})();
+
+(function () {
+    document.getElementById("btn_downL-H").addEventListener('click', makeRequest);//attaching click event for button
+    function makeRequest() {
+        var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
+        httpRequest.open('GET', 'http://'+hostIP_STR+'/downL'); // service call
+        httpRequest.send();
+    }
+})();
+
+(function () {
+    document.getElementById("btn_set_topL-H").addEventListener('click', makeRequest);//attaching click event for button
+    function makeRequest() {
+        var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
+        httpRequest.open('GET', 'http://'+hostIP_STR+'/set_topL'); // service call
+        httpRequest.send();
+    }
+})();
+
+(function () {
+    document.getElementById("btn_set_bottomL-H").addEventListener('click', makeRequest);//attaching click event for button
+    function makeRequest() {
+        var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
+        httpRequest.open('GET', 'http://'+hostIP_STR+'/set_bottomL'); // service call
+        httpRequest.send();
+    }
+})();
+/*
 function makeRequestWeather() {
     var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
     httpRequest.open('GET', 'http://'+hostIP_STR+'/weather'); // service call
