@@ -67,7 +67,7 @@ webpage += "$(document).on('input', '#inputDistanceCMC', function() {$('#CM_STEP
 webpage += "$(document).on('input', '#inputDistanceCMR', function() {$('#CM_STEPPER_MAX_STEPS_R').val($(this).val()*1427);});";
 webpage += "$(document).on('input', '#customRange3L', function() {location.href='/setL?pos='+$(this).val();});";
 webpage += "$(document).on('input', '#customRange3C', function() {location.href='/set?pos='+$(this).val();});";
-webpage += "$(document).on('input', '#customRange3R', function() {location.href='/setR?pos='+$(this).val();});";
+webpage += "$(document).on('input', '#customRange3R', function() {alert('aa'); location.href='/setR?pos='+$(this).val();});";
 webpage += "$('#sidebarToggleTop').click(function() {$('#accordionSidebar').toggle();});});";
 webpage += "</script>";
 
@@ -679,17 +679,11 @@ function sendBTN_async_update(addr){
   var address="http://"+hostIP_STR+"/"+addr;
   var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
   httpRequest.open('GET', address, true); // service call
-  /*httpRequest.send();
-  dump(httpRequest.responseText);
-  alert(httpRequest.responseText);
-  if (httpRequest.status==302){
-    alert(httpRequest.responseText);
-    dump(httpRequest.responseText);
-  }*/
+
   httpRequest.onreadystatechange = function (aEvt) {
     if (httpRequest.readyState == 4) {
        if(httpRequest.status == 302){
-        console.log(httpRequest.responseText);
+        //console.log(httpRequest.responseText);
         var resultPerRangeGetted=httpRequest.responseText.split(",");
 
         STR_PER_STEPPER_TARGET_L = resultPerRangeGetted[0];
