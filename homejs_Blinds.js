@@ -747,7 +747,7 @@ function showhide_MenuSmartphone(){
     document.getElementById("accordionSidebar").style.display = "none"
   }else if(document.getElementById("accordionSidebar").style.display == "none") {
     console.log("Oculto -> Visible");
-    document.getElementById("accordionSidebar").style.display = "block"
+    document.getElementById("accordionSidebar").style.display = "inline-table"
   }
 
 }
