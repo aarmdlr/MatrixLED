@@ -200,9 +200,9 @@ webpage += "<div id='wrapper'>";
                 webpage += "<div class='text-xs font-weight-bold text-uppercase mb-1 text-center'>Cortina Izquierda</div>";
                 webpage += "<br>";
                 webpage += "<div class='card-body mx-auto col-6'>";
-                  webpage += "<a class='btn btn-primary btn-block' onclick='"+'alert("a")'+"' id='btn_upL-H'><i class='fas fa-chevron-up'></i></a>";
-                  webpage += "<a class='btn btn-primary btn-block' id='btn_stopL-H'><i class='fas fa-minus'></i></a>";
-                  webpage += "<a class='btn btn-primary btn-block' id='btn_downL-H'><i class='fas fa-chevron-down'></i></a>";
+                  webpage += "<a class='btn btn-primary btn-block' onclick='"+'sendBTN_async_update("upL")'+"' id='btn_upL-H'><i class='fas fa-chevron-up'></i></a>";
+                  webpage += "<a class='btn btn-primary btn-block' onclick='"+'sendBTN_async_update("stopL")'+"' id='btn_stopL-H'><i class='fas fa-minus'></i></a>";
+                  webpage += "<a class='btn btn-primary btn-block' onclick='"+'sendBTN_async_update("downL")'+"' id='btn_downL-H'><i class='fas fa-chevron-down'></i></a>";
                 webpage += "</div>";
                 webpage += "<br>";
                 webpage += "<div class='btn-group pb-6 col-12 text-xs' role='group'>";
@@ -628,7 +628,7 @@ window.onload = function() {
   homeHTML();
 
 
-  (function () {
+/*  (function () {
       document.getElementById("btn_upL-H").addEventListener('click', makeRequest);//attaching click event for button
       function makeRequest() {
           var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
@@ -671,9 +671,19 @@ window.onload = function() {
           httpRequest.open('GET', 'http://'+hostIP_STR+'/set_bottomL'); // service call
           httpRequest.send();
       }
-  })();
+  })();*/
 };
 
+
+function sendBTN_async_update(addr){
+  var address="http://"+hostIP_STR+"/"+addr;
+  var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
+  httpRequest.open('GET', address); // service call
+  httpRequest.send();
+  if (httpRequest.status==200){
+    alert(httpRequest.responseText);
+  }
+}
 
 
 /*
