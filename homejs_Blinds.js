@@ -723,7 +723,7 @@ function sendRANGE_async_update(identifier){
     httpRequest.onreadystatechange = function (aEvt) {
       if (httpRequest.readyState == 4) {
          if(httpRequest.status == 302){
-          //console.log(httpRequest.responseText);
+          console.log(httpRequest.responseText);
           var resultPerRangeGetted=httpRequest.responseText.split(",");
 
           STR_PER_STEPPER_TARGET_L = resultPerRangeGetted[0];
