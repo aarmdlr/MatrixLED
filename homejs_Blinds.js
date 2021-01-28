@@ -677,8 +677,8 @@ window.onload = function() {
 
 function sendBTN_async_update(addr){
   var address="http://"+hostIP_STR+"/"+addr;
-  var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-  httpRequest.open('GET', address, true); // service call
+  //var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
+  //httpRequest.open('GET', address, true); // service call
   /*httpRequest.send();
   dump(httpRequest.responseText);
   alert(httpRequest.responseText);
@@ -686,16 +686,16 @@ function sendBTN_async_update(addr){
     alert(httpRequest.responseText);
     dump(httpRequest.responseText);
   }*/
-  httpRequest.onreadystatechange = function (aEvt) {
-    if (httpRequest.readyState == 4) {
-       if(httpRequest.status == 200)
-        console.log(httpRequest.responseText);
-       else
-        console.log(httpRequest.responseText);
-        console.log("Error loading page\n");
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      alert(this.responseText);
+    }else{
+      alert(this.responseText);
     }
   };
-  httpRequest.send(null);
+  xhttp.open("GET", address, true);
+  xhttp.send();
 }
 
 
