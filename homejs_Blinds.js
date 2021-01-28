@@ -65,9 +65,9 @@ webpage += "<script>";
 webpage += "$(document).ready(function(){$(document).on('input', '#inputDistanceCML', function() {$('#CM_STEPPER_MAX_STEPS_L').val($(this).val()*1427);});";
 webpage += "$(document).on('input', '#inputDistanceCMC', function() {$('#CM_STEPPER_MAX_STEPS_C').val($(this).val()*1427);});";
 webpage += "$(document).on('input', '#inputDistanceCMR', function() {$('#CM_STEPPER_MAX_STEPS_R').val($(this).val()*1427);});";
-webpage += "$(document).on('input', '#customRange3L', function() {location.href='/setL?pos='+$(this).val();});";
-webpage += "$(document).on('input', '#customRange3C', function() {location.href='/set?pos='+$(this).val();});";
-webpage += "$(document).on('input', '#customRange3R', function() {alert('aa'); location.href='/setR?pos='+$(this).val();});";
+webpage += "$(document).on('input', '#customRange3L', function() {var addrTempPos='setL?pos='+$(this).val(); sendBTN_async_update(addrTempPos);});";
+webpage += "$(document).on('input', '#customRange3C', function() {var addrTempPos='set?pos='+$(this).val(); sendBTN_async_update(addrTempPos);});";
+webpage += "$(document).on('input', '#customRange3R', function() {var addrTempPos='setR?pos='+$(this).val(); sendBTN_async_update(addrTempPos);});";
 webpage += "$('#sidebarToggleTop').click(function() {$('#accordionSidebar').toggle();});});";
 webpage += "</script>";*/
 
