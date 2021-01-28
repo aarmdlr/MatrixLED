@@ -688,11 +688,21 @@ function sendBTN_async_update(addr){
   }*/
   httpRequest.onreadystatechange = function (aEvt) {
     if (httpRequest.readyState == 4) {
-       if(httpRequest.status == 200)
+       if(httpRequest.status == 302){
         console.log(httpRequest.responseText);
-       else
-        console.log(httpRequest.responseText);
+        var resultPerRangeGetted=httpRequest.responseText.split(",");
+
+        STR_PER_STEPPER_TARGET_L = resultPerRangeGetted[0];
+        STR_PER_STEPPER_TARGET = resultPerRangeGetted[1];
+        STR_PER_STEPPER_TARGET_R = resultPerRangeGetted[2];
+
+        document.getElementById("customRange3L").value = STR_PER_STEPPER_TARGET_L;
+        document.getElementById("customRange3C").value = STR_PER_STEPPER_TARGET;
+        document.getElementById("customRange3R").value = STR_PER_STEPPER_TARGET_R;
+
+      }else{
         console.log("Error loading page\n");
+      }
     }
   };
   httpRequest.send(null);
