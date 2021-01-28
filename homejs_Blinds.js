@@ -541,7 +541,9 @@ webpage += "<div id='wrapper'>";
     webpage += "</div>";
   webpage += "</div>";
 
-
+  webpage += "<script>";
+  webpage += "$('#sidebarToggleTop').click(function() {$('#accordionSidebar').toggle();});});";
+  webpage += "</script>";
 
 
 
