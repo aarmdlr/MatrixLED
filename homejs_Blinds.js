@@ -101,7 +101,7 @@ webpage += "<div id='wrapper'>";
     webpage += "<div id='content-wrapper' class='d-flex flex-column'>";
       webpage += "<div id='content'>";
         webpage += "<nav class='navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow' style='height: 45px;'>";
-          webpage += "<button id='sidebarToggleTop' class='btn btn-link d-md-none rounded-circle mr-3'><i class='fa fa-bars'></i></button>";
+          webpage += "<button id='sidebarToggleTop' onclick='showhide_MenuSmartphone();' class='btn btn-link d-md-none rounded-circle mr-3'><i class='fa fa-bars'></i></button>";
         webpage += "</nav>";
         webpage += "<div class='container-fluid' id='containerHome'>";
           webpage += "<div class='d-sm-flex align-items-center justify-content-between mb-4'>";
@@ -541,12 +541,6 @@ webpage += "<div id='wrapper'>";
     webpage += "</div>";
   webpage += "</div>";
 
-  webpage += "<script>";
-webpage += "$(document).ready(function(){$(document).on('input', '#inputDistanceCML', function() {$('#CM_STEPPER_MAX_STEPS_L').val($(this).val()*1427);});";
-webpage += "$(document).on('input', '#inputDistanceCMC', function() {$('#CM_STEPPER_MAX_STEPS_C').val($(this).val()*1427);});";
-webpage += "$(document).on('input', '#inputDistanceCMR', function() {$('#CM_STEPPER_MAX_STEPS_R').val($(this).val()*1427);});";
-webpage += "$('#sidebarToggleTop').click(function() {$('#accordionSidebar').toggle();});});";
-webpage += "</script>";
 
 
 
