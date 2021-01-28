@@ -552,51 +552,6 @@ webpage += "<div id='wrapper'>";
 
 
 
-
-(function () {
-    document.getElementById("btn_upL-H").addEventListener('click', makeRequest);//attaching click event for button
-    function makeRequest() {
-        var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-        httpRequest.open('GET', 'http://'+hostIP_STR+'/upL'); // service call
-        httpRequest.send();
-    }
-})();
-
-(function () {
-    document.getElementById("btn_stopL-H").addEventListener('click', makeRequest);//attaching click event for button
-    function makeRequest() {
-        var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-        httpRequest.open('GET', 'http://'+hostIP_STR+'/stopL'); // service call
-        httpRequest.send();
-    }
-})();
-
-(function () {
-    document.getElementById("btn_downL-H").addEventListener('click', makeRequest);//attaching click event for button
-    function makeRequest() {
-        var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-        httpRequest.open('GET', 'http://'+hostIP_STR+'/downL'); // service call
-        httpRequest.send();
-    }
-})();
-
-(function () {
-    document.getElementById("btn_set_topL-H").addEventListener('click', makeRequest);//attaching click event for button
-    function makeRequest() {
-        var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-        httpRequest.open('GET', 'http://'+hostIP_STR+'/set_topL'); // service call
-        httpRequest.send();
-    }
-})();
-
-(function () {
-    document.getElementById("btn_set_bottomL-H").addEventListener('click', makeRequest);//attaching click event for button
-    function makeRequest() {
-        var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
-        httpRequest.open('GET', 'http://'+hostIP_STR+'/set_bottomL'); // service call
-        httpRequest.send();
-    }
-})();
 /*
 function makeRequestWeather() {
     var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
@@ -672,6 +627,53 @@ window.onload = function() {
   getPageValuesHTML();
   homeHTML();
 };
+
+
+
+(function () {
+    document.getElementById("btn_upL-H").addEventListener('click', makeRequest);//attaching click event for button
+    function makeRequest() {
+        var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
+        httpRequest.open('GET', 'http://'+hostIP_STR+'/upL'); // service call
+        httpRequest.send();
+    }
+})();
+
+(function () {
+    document.getElementById("btn_stopL-H").addEventListener('click', makeRequest);//attaching click event for button
+    function makeRequest() {
+        var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
+        httpRequest.open('GET', 'http://'+hostIP_STR+'/stopL'); // service call
+        httpRequest.send();
+    }
+})();
+
+(function () {
+    document.getElementById("btn_downL-H").addEventListener('click', makeRequest);//attaching click event for button
+    function makeRequest() {
+        var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
+        httpRequest.open('GET', 'http://'+hostIP_STR+'/downL'); // service call
+        httpRequest.send();
+    }
+})();
+
+(function () {
+    document.getElementById("btn_set_topL-H").addEventListener('click', makeRequest);//attaching click event for button
+    function makeRequest() {
+        var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
+        httpRequest.open('GET', 'http://'+hostIP_STR+'/set_topL'); // service call
+        httpRequest.send();
+    }
+})();
+
+(function () {
+    document.getElementById("btn_set_bottomL-H").addEventListener('click', makeRequest);//attaching click event for button
+    function makeRequest() {
+        var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
+        httpRequest.open('GET', 'http://'+hostIP_STR+'/set_bottomL'); // service call
+        httpRequest.send();
+    }
+})();
 /*
 function setImageAsync(addr){
   var address="http://"+hostIP_STR+"/"+addr;
