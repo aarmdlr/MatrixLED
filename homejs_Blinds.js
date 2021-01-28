@@ -75,7 +75,7 @@ webpage += "<a class='scroll-to-top rounded' href='#page-top' style='display: no
 
 webpage += "<div id='wrapper'>";
 
-    webpage += "<ul class='navbar-nav bg-gradient-primary sidebar sidebar-dark accordion visible-lg' id='accordionSidebar' style='display: none;'>";
+    webpage += "<ul class='navbar-nav bg-gradient-primary sidebar sidebar-dark accordion visible-lg' id='accordionSidebar' style='display: none; overflow: unset !important;'>";
       webpage += "<a class='sidebar-brand d-flex align-items-center justify-content-center' href='#' id='btnHomeControl'>";
         webpage += "<div class='sidebar-brand-icon'><i class='fas fa-home'></i></div>";
         webpage += "<div class='sidebar-brand-text mx-3'>Alex's Home</div>";
