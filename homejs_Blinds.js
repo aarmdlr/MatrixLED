@@ -200,7 +200,7 @@ webpage += "<div id='wrapper'>";
                 webpage += "<div class='text-xs font-weight-bold text-uppercase mb-1 text-center'>Cortina Izquierda</div>";
                 webpage += "<br>";
                 webpage += "<div class='card-body mx-auto col-6'>";
-                  webpage += "<a class='btn btn-primary btn-block' onclick='alert('Hola!')' id='btn_upL-H'><i class='fas fa-chevron-up'></i></a>";
+                  webpage += "<a class='btn btn-primary btn-block' onclick='alert("+'Hola!'+")' id='btn_upL-H'><i class='fas fa-chevron-up'></i></a>";
                   webpage += "<a class='btn btn-primary btn-block' id='btn_stopL-H'><i class='fas fa-minus'></i></a>";
                   webpage += "<a class='btn btn-primary btn-block' id='btn_downL-H'><i class='fas fa-chevron-down'></i></a>";
                 webpage += "</div>";
