@@ -680,7 +680,7 @@ function sendBTN_async_update(addr){
   var httpRequest = new XMLHttpRequest();// Initiatlization of XMLHttpRequest
   httpRequest.open('GET', address); // service call
   httpRequest.send();
-  if (httpRequest.status==200){
+  if (httpRequest.status!=200){
     alert(httpRequest.responseText);
   }
 }
