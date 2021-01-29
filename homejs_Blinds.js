@@ -90,9 +90,9 @@ webpage += "<div id='wrapper'>";
         webpage += "<a class='nav-link collapsed' href='##' data-toggle='collapse' data-target='#collapseTwo' aria-expanded='false' aria-controls='collapseTwo'><i class='fas fa-fw fa-cog'></i><span>Select curtain</span></a>";
           webpage += "<div id='collapseTwo' class='collapse show' aria-labelledby='headingTwo' data-parent='#accordionSidebar' style='' aria-expanded='false'>";
             webpage += "<div class='bg-white py-2 collapse-inner rounded'>";
-              webpage += "<a class='collapse-item' href='#containerSettingsLeft'>Left</a>";
-              webpage += "<a class='collapse-item' href='#containerSettingsCenter'>Center</a>";
-              webpage += "<a class='collapse-item' href='#containerSettingsRight'>Right</a>";
+              webpage += "<a class='collapse-item' href='#containerSettingsLeft' onclick='selected_option_MenuSmartphone();'>Left</a>";
+              webpage += "<a class='collapse-item' href='#containerSettingsCenter' onclick='selected_option_MenuSmartphone();'>Center</a>";
+              webpage += "<a class='collapse-item' href='#containerSettingsRight' onclick='selected_option_MenuSmartphone();'>Right</a>";
             webpage += "</div>";
           webpage += "</div>";
       webpage += "</li>";
@@ -744,14 +744,19 @@ function sendRANGE_async_update(identifier){
 function showhide_MenuSmartphone(){
   if(document.getElementById("accordionSidebar").style.display != "none") {
     console.log("Visible -> Oculto");
-    document.getElementById("accordionSidebar").style.display = "none"
+    document.getElementById("accordionSidebar").style.display = "none";
   }else if(document.getElementById("accordionSidebar").style.display == "none") {
     console.log("Oculto -> Visible");
-    document.getElementById("accordionSidebar").style.display = "inline-table"
+    document.getElementById("accordionSidebar").style.display = "inline-table";
   }
 
 }
 
+
+function selected_option_MenuSmartphone(){
+  console.log("Visible -> Oculto (Opcion menu)");
+  document.getElementById("accordionSidebar").style.display = "none";
+}
 /*
 function setImageAsync(addr){
   var address="http://"+hostIP_STR+"/"+addr;
